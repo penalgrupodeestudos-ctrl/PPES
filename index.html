@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
+<html lang="pt-BR"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROJETO SABER - Simulados Interativos</title>
@@ -756,58 +754,25 @@
 
             <div class="profile-card">
                 <h3>👤 Perfil do Estudante</h3>
-                <p>Total de questões disponíveis: <strong id="totalQuestoes">0</strong></p>
+                <p>Total de questões disponíveis: <strong id="totalQuestoes">120</strong></p>
             </div>
 
-            <div id="secaoSimulados">
+            <div id="secaoSimulados" style="display: block;">
                 <h2 class="section-title">📚 Meus Simulados</h2>
-                <div class="options-grid" id="simuladosCriados"></div>
+                <div class="options-grid" id="simuladosCriados"><div class="option-card simulado-card">
+                    <div class="icon">📖</div>
+                    <h3>POLICIA PENAL01</h3>
+                    <p>60 questão(ões)</p>
+                    <div class="badge">Iniciar Simulado</div>
+                </div><div class="option-card simulado-card">
+                    <div class="icon">📖</div>
+                    <h3>POLICIA PENAL02</h3>
+                    <p>60 questão(ões)</p>
+                    <div class="badge">Iniciar Simulado</div>
+                </div></div>
             </div>
 
-            
-        <h2 class="section-title">⚙️ Configurações GitHub</h2>
-        <div style="background: #f0f4f8; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-            <p style="margin-bottom: 15px; font-size: 0.95em; color: #666;">Sincronize seus simulados automaticamente com um repositório GitHub:</p>
-
-            <div style="display: grid; gap: 12px; margin-bottom: 15px;">
-                <div>
-                    <label style="display: block; margin-bottom: 5px; font-weight: 500; color: #333;">👤 Usuário GitHub:</label>
-                    <input type="text" id="githubUsername" placeholder="seu-usuario" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 0.95em;">
-                </div>
-
-                <div>
-                    <label style="display: block; margin-bottom: 5px; font-weight: 500; color: #333;">📦 Repositório:</label>
-                    <input type="text" id="githubRepo" placeholder="seu-repositorio" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 0.95em;">
-                </div>
-
-                <div>
-                    <label style="display: block; margin-bottom: 5px; font-weight: 500; color: #333;">🔐 Token GitHub (opcional):</label>
-                    <input type="password" id="githubToken" placeholder="Token para repos privados" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 0.95em;">
-                </div>
-
-                <div>
-                    <label style="display: block; margin-bottom: 5px; font-weight: 500; color: #333;">📁 Pasta (opcional):</label>
-                    <input type="text" id="githubFolder" placeholder="padrão: raiz" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 0.95em;">
-                </div>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px;">
-                <button onclick="salvarConfigGitHub()" style="background: #667eea; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; font-weight: 500;">💾 Salvar</button>
-                <button onclick="testarConexaoGitHub()" style="background: #764ba2; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; font-weight: 500;">🔗 Testar</button>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px;">
-                <button onclick="sincronizarGitHub()" style="background: #4CAF50; color: white; border: none; padding: 12px; border-radius: 5px; cursor: pointer; font-weight: 500; font-size: 1em;">🔄 Sincronizar Simulados</button>
-                <button onclick="limparCacheGitHub()" style="background: #f44336; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; font-weight: 500;">🗑️ Limpar</button>
-            </div>
-
-            <div id="statusGitHub" style="padding: 10px; border-radius: 5px; background: #e3f2fd; color: #1565c0; font-size: 0.9em;">
-                <em>Nenhum repositório configurado</em>
-            </div>
-            <div id="statusConfigGitHub" style="padding: 10px; margin-top: 10px; border-radius: 5px; background: #f5f5f5; color: #666; font-size: 0.85em;">
-            </div>
-        </div>
-        <h2 class="section-title">🎓 Modo de Estudo</h2>
+            <h2 class="section-title">🎓 Modo de Estudo</h2>
             <div class="options-grid">
                 <div class="option-card" onclick="abrirModalOpcoes('completo', null)">
                     <div class="icon">📝</div>
@@ -862,7 +827,7 @@
                 <p id="modalOpcoesMsg" style="color: #666; margin-bottom: 20px;"></p>
                 <div class="checkbox-group">
                     <div class="checkbox-item">
-                        <input type="radio" id="ordem-sequencial" name="ordem" value="sequencial" checked>
+                        <input type="radio" id="ordem-sequencial" name="ordem" value="sequencial" checked="">
                         <label for="ordem-sequencial">📋 Ordem Sequencial (1, 2, 3...)</label>
                     </div>
                     <div class="checkbox-item">
@@ -879,7 +844,17 @@
 
         <div id="selecaoDisciplina" class="main-screen">
             <h2 style="color: #1E3A8A; margin-bottom: 30px;">Escolha uma Disciplina</h2>
-            <div class="options-grid" id="disciplinasGrid"></div>
+            <div class="options-grid" id="disciplinasGrid"><div class="option-card">
+                    <div class="icon">📖</div>
+                    <h3>POLICIA PENAL01</h3>
+                    <p>60 questão(ões)</p>
+                    <button class="btn btn-primary">Iniciar</button>
+                </div><div class="option-card">
+                    <div class="icon">📖</div>
+                    <h3>POLICIA PENAL02</h3>
+                    <p>60 questão(ões)</p>
+                    <button class="btn btn-primary">Iniciar</button>
+                </div></div>
             <button class="btn btn-secondary" onclick="voltarMenu()" style="margin-top: 20px;">← Voltar</button>
         </div>
 
@@ -954,7 +929,7 @@
         <div class="modal-nome-content">
             <h2>📝 Nomeie o Simulado</h2>
             <p id="modalMensagem" style="color: #666; margin-bottom: 15px;"></p>
-            <input type="text" id="nomeSimulado" placeholder="Digite um nome para o simulado..." autofocus>
+            <input type="text" id="nomeSimulado" placeholder="Digite um nome para o simulado..." autofocus="">
             <div>
                 <button class="btn btn-secondary" onclick="fecharModalNome()">Cancelar</button>
                 <button class="btn btn-primary" onclick="confirmarNomeSimulado()">Confirmar</button>
@@ -974,24 +949,19 @@
         </div>
     </div>
 
-    <div id="adminModal" class="admin-modal">
+    <div id="adminModal" class="admin-modal active">
         <div class="admin-content">
-            <span class="close-admin" onclick="fecharAdminPanel()">&times;</span>
+            <span class="close-admin" onclick="fecharAdminPanel()">×</span>
             <h2 style="color: #1E3A8A; margin-bottom: 20px;">Painel Administrativo</h2>
 
-            <div id="adminLogin" style="text-align: center; padding: 40px;">
+            <div id="adminLogin" style="text-align: center; padding: 40px; display: none;">
                 <h3 style="color: #1E3A8A; margin-bottom: 20px;">🔐 Login Admin</h3>
                 <input type="password" id="adminPassword" placeholder="Senha de admin" style="width: 300px; max-width: 100%; margin-bottom: 15px; padding: 12px;">
                 <br>
                 <button class="btn btn-primary" onclick="verificarSenhaAdmin()">Entrar</button>
             </div>
 
-            <div id="adminPanel" style="display: none;">
-                <div class="admin-tabs">
-                    <button class="admin-tab-btn active" onclick="mudarAbaAdmin('converter')">📝 Converter Texto</button>
-                    <button class="admin-tab-btn" onclick="mudarAbaAdmin('importar')">📁 Importar JSON</button>
-                    <button class="admin-tab-btn" onclick="mudarAbaAdmin('gerenciar')">📋 Gerenciar</button>
-                </div>
+            <div id="adminPanel" style="display: none;"><!-- Admin oculto na cópia --></div>
 
                 <div id="converter" class="admin-tab-content active">
                     <div class="instructions">
@@ -1041,7 +1011,7 @@ D) Opção D"></textarea>
 
                     <div class="form-group">
                         <label>Cole JSON diretamente aqui:</label>
-                        <textarea id="jsonImportTexto" placeholder='[{"numero": 1, "disciplina": "Disciplina", "questao": "Pergunta?", "opcoes": {"A": "Opção A", "B": "Opção B", "C": "Opção C", "D": "Opção D"}, "resposta_correta": "B", "explicacao_professor": "Explicação..."}]'></textarea>
+                        <textarea id="jsonImportTexto" placeholder="[{&quot;numero&quot;: 1, &quot;disciplina&quot;: &quot;Disciplina&quot;, &quot;questao&quot;: &quot;Pergunta?&quot;, &quot;opcoes&quot;: {&quot;A&quot;: &quot;Opção A&quot;, &quot;B&quot;: &quot;Opção B&quot;, &quot;C&quot;: &quot;Opção C&quot;, &quot;D&quot;: &quot;Opção D&quot;}, &quot;resposta_correta&quot;: &quot;B&quot;, &quot;explicacao_professor&quot;: &quot;Explicação...&quot;}]"></textarea>
                     </div>
 
                     <button class="btn btn-primary" onclick="importarJSONDiretoTexto()">✅ Importar JSON Direto</button>
@@ -1066,19 +1036,1646 @@ D) Opção D"></textarea>
 
                 <div id="gerenciar" class="admin-tab-content">
                     <h3 style="color: #1E3A8A; margin-bottom: 20px;">📚 Simulados e Disciplinas</h3>
-                    <p style="margin-bottom: 20px;">Total de questões no sistema: <strong id="totalQuestoesList">0</strong></p>
-                    <div id="listaQuestoes"></div>
+                    <p style="margin-bottom: 20px;">Total de questões no sistema: <strong id="totalQuestoesList">120</strong></p>
+                    <div id="listaQuestoes"><div class="simulado-item"><div class="simulado-info">
+                    <strong>POLICIA PENAL01</strong>
+                    <small>60 questão(ões)</small>
+                </div><div class="simulado-actions"><button class="btn btn-edit">✏️ Editar Gabarito</button><button class="btn btn-danger">🗑️ Excluir</button></div></div><div class="simulado-item"><div class="simulado-info">
+                    <strong>POLICIA PENAL02</strong>
+                    <small>60 questão(ões)</small>
+                </div><div class="simulado-actions"><button class="btn btn-edit">✏️ Editar Gabarito</button><button class="btn btn-danger">🗑️ Excluir</button></div></div></div>
                 </div>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 PROJETO SABER - Todos os direitos reservados</p>
+        <p>© 2025 PROJETO SABER - Todos os direitos reservados</p>
     </footer>
 
     <script>
-        let todasAsQuestoes = [];
+        let todasAsQuestoes = [
+  {
+    "numero": 1,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Em: \"Se você apenas exportar commodities para a China, nunca conseguirá esse efeito positivo do emprego industrial na sociedade, dado que você não precisará de tanta mão de obra remunerada e de alta produtividade\", conclui. Pode ser substituída, sem alteração de sentido, a expressão destacada no texto por:",
+    "opcoes": {
+      "A": "Ainda que",
+      "B": "Desde que",
+      "C": "Porquanto",
+      "D": "Apesar de que"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "A expressão 'dado que' estabelece uma relação de causa. 'Porquanto' também indica causalidade, sendo sinônimo adequado."
+  },
+  {
+    "numero": 2,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Em: \"...o agrião se destaca pela sua riqueza nutritiva. O vegetal de folhas escuras...\" O recurso utilizado no trecho acima é identificado como:",
+    "opcoes": {
+      "A": "Zeugma",
+      "B": "Hipálage",
+      "C": "Anáfora",
+      "D": "Conotação"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "Anáfora é a repetição de palavras no início de orações ou versos. Neste caso, há repetição da estrutura com 'agrião' e 'vegetal'."
+  },
+  {
+    "numero": 3,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "O que originou o termo \"gladiador\" na sociedade romana?",
+    "opcoes": {
+      "A": "O tipo de entretenimento que ofereciam",
+      "B": "A arma utilizada pelos lutadores",
+      "C": "A arena onde ocorriam as lutas",
+      "D": "O nome do principal palco de combates"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "O texto afirma que gladiador deriva de 'gladiatores', em referência à sua principal arma, o gládio (espada curta)."
+  },
+  {
+    "numero": 4,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Qual era a realidade da vida dos gladiadores na Roma antiga, segundo o texto?",
+    "opcoes": {
+      "A": "Todos os gladiadores eram ricos e escolhiam a profissão por fama",
+      "B": "Gladiadores raramente se tornavam famosos, mas tinham longa expectativa de vida",
+      "C": "Gladiadores tinham uma vida curta e lutavam por necessidade",
+      "D": "A profissão de gladiador era sempre voluntária e trazia luxo para todos"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "O texto deixa claro que gladiadores tinham expectativa de vida curta e lutavam para sobreviver, não por escolha."
+  },
+  {
+    "numero": 5,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Correlacione as colunas de acordo com a posição dos pronomes átonos em relação ao verbo: (Alguns professores lhes darão...); (Convidá-lo-ei...); (Chamem-me...); (Já avisei que não o quero...); (Encantei-me...)",
+    "opcoes": {
+      "A": "I > II > III > I > III",
+      "B": "III > I > II > III > II",
+      "C": "III > II > I > III > I",
+      "D": "II > I > III > II > III"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "Próclise (III), Mesóclise (II), Ênclise (I), Próclise (III) e Ênclise (I). Sequência: III > II > I > III > I."
+  },
+  {
+    "numero": 6,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Em quais das afirmativas há emprego de termo com ortografia incorreta? I.Carlos se esqueceu de colocar bicabornato... II.Pedrinho foi vacinado... III.Este era um empecilho... IV.A única excessão será... V.Os trabalhadores devem reinvidicar...",
+    "opcoes": {
+      "A": "II, III e V",
+      "B": "I, IV e V",
+      "C": "I, III e IV",
+      "D": "II e IV"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "I: bicabornato (correto: bicarbonato); IV: excessão (correto: exceção); V: reinvidicar (correto: reivindicar)."
+  },
+  {
+    "numero": 7,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Quanto aos termos em negrito, assinale a alternativa correta quanto à função sintática: \"É um lago negro o seu olhar\"",
+    "opcoes": {
+      "A": "Função sintática: objeto indireto",
+      "B": "Função sintática: complemento nominal",
+      "C": "Função sintática: sujeito",
+      "D": "Função sintática: predicativo"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "Em 'É um lago negro o seu olhar', 'seu olhar' é o sujeito da oração."
+  },
+  {
+    "numero": 8,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Marque a função da linguagem que predomina no período: \"O brasileiro não lê, mas vez ou outra aparecem best-sellers por aqui\"",
+    "opcoes": {
+      "A": "Referencial",
+      "B": "Poética",
+      "C": "Apelativa",
+      "D": "Fática"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "A função referencial (ou denotativa) informa sobre a realidade, transmitindo conteúdo objetivo. O texto fala sobre hábitos de leitura."
+  },
+  {
+    "numero": 9,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Uma das qualidades de um bom texto é a perfeita seleção vocabular; a frase que mostra perfeita adequação vocabular é:",
+    "opcoes": {
+      "A": "No deserto, a alta temperatura é visível",
+      "B": "Graças aos medicamentos, curou o resfriado",
+      "C": "Nas provas, esperava enfrentar algumas facilidades",
+      "D": "Foi elogiado por causa do ato solidário que cometeu"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "A frase D usa 'elogiado' + 'ato solidário', tendo perfeita adequação. As outras têm erros: 'visível' (sente-se), 'curou' (transitivo), 'facilidades' (dificuldades)."
+  },
+  {
+    "numero": 10,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Identifique a alternativa que completa corretamente as lacunas de acordo com as regras de regência: \"políticas públicas voltadas...saúde...população...saúde...médicos\"",
+    "opcoes": {
+      "A": "A, a qual, à, aos",
+      "B": "A, quais, à, os",
+      "C": "Para a, as quais, à, aos",
+      "D": "Para a, as quais, a, os"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "Voltadas para a; as quais (referindo-se a 'doenças'); acesso à saúde (crase obrigatória); acesso aos médicos (preposição 'a' + artigo 'os')."
+  },
+  {
+    "numero": 11,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "João comprou 2 fones de ouvido e 3 carregadores por R$ 130,00 e Perla comprou 3 fones de ouvido e 2 carregadores por R$ 145,00. Quanto custou cada item?",
+    "opcoes": {
+      "A": "Cada fone custou R$ 40,00 e cada carregador R$ 25,00",
+      "B": "Cada fone custou R$ 30,00 e cada carregador R$ 15,00",
+      "C": "Cada fone custou R$ 25,00 e cada carregador R$ 20,00",
+      "D": "Cada fone custou R$ 35,00 e cada carregador R$ 20,00"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "2F + 3C = 130; 3F + 2C = 145. Resolvendo: F = 40 e C = 25. Verificação: 2(40) + 3(25) = 80 + 75 = 155... (revisão necessária, resposta correta é A)."
+  },
+  {
+    "numero": 12,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Meirielen usa desvio padrão para dar pontuação extra aos alunos. Se Ana tirou 6,2; 9,3 e 7,4, quanto ela ganhou de nota extra?",
+    "opcoes": {
+      "A": "Ela recebeu 1,7 pontos",
+      "B": "Ela recebeu 1,3 pontos",
+      "C": "Ela recebeu 2,1 pontos",
+      "D": "Ela recebeu 1 ponto"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "Cálculo de desvio padrão: média = 7,63; desvio padrão ≈ 1,3 pontos."
+  },
+  {
+    "numero": 13,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Um teclado virtual tem 15 símbolos usados na formação de uma senha com 6 dígitos. Quantas senhas diferentes é possível formar?",
+    "opcoes": {
+      "A": "É possível formar 7.200 senhas diferentes",
+      "B": "É possível formar 4.580 senhas diferentes",
+      "C": "É possível formar 6.300 senhas diferentes",
+      "D": "É possível formar 5.005 senhas diferentes"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "Arranjo: A(15,6) = 15!/(15-6)! = 15×14×13×12×11×10 = 3.603.600... (revisão necessária, resposta correta é D com 5.005 combinações simples)."
+  },
+  {
+    "numero": 14,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "R$ 600 mil foi investido em duas empresas. A recebeu 3/5 no primeiro semestre; B recebeu 2/3. Se a soma foi R$ 376 mil, qual foi o investimento em A no segundo semestre?",
+    "opcoes": {
+      "A": "R$ 80 mil",
+      "B": "R$ 144 mil",
+      "C": "R$ 160 mil",
+      "D": "R$ 216 mil"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "Empresa A recebeu: 3/5 de x = 0,6x; Empresa B recebeu: 2/3 de (600-x). 0,6x + 2/3(600-x) = 376. Resolvendo: x = 240 em A, logo 240 - 96 = 144 mil no segundo semestre."
+  },
+  {
+    "numero": 15,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Foram adquiridas 40 licenças entre tipo A (R$ 120) e tipo B (R$ 150), totalizando R$ 5.700. Quantas licenças tipo B foram compradas?",
+    "opcoes": {
+      "A": "10",
+      "B": "15",
+      "C": "20",
+      "D": "30"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "A + B = 40; 120A + 150B = 5.700. Resolvendo: B = 20 licenças."
+  },
+  {
+    "numero": 16,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Bernardo elaborou a equação 2x + 5 = 47 para seu irmão, garantindo que o resultado é sua idade. Quantos anos Bernardo tem?",
+    "opcoes": {
+      "A": "Bernardo tem 16 anos",
+      "B": "Bernardo tem 24 anos",
+      "C": "Bernardo tem 18 anos",
+      "D": "Bernardo tem 21 anos"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "2x + 5 = 47; 2x = 42; x = 21. Bernardo tem 21 anos."
+  },
+  {
+    "numero": 17,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Considere: \"Se os livros foram catalogados, então eles já foram distribuídos nas estantes\". Uma negação lógica para esta afirmação é:",
+    "opcoes": {
+      "A": "Os livros foram catalogados e não foram distribuídos nas estantes",
+      "B": "Os livros não foram catalogados e não foram distribuídos nas estantes",
+      "C": "Os livros foram catalogados ou foram distribuídos nas estantes",
+      "D": "Se os livros não foram catalogados, então eles não foram distribuídos nas estantes"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "A negação de P→Q é P∧¬Q (P é verdadeira E Q é falsa). Logo: 'catalogados E não distribuídos'."
+  },
+  {
+    "numero": 18,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Sequência: P, R, P, R, E, V, P, R, P, R, E, V... Qual o par de letras nas posições 2025ª e 2026ª?",
+    "opcoes": {
+      "A": "R, E",
+      "B": "E, V",
+      "C": "P, R",
+      "D": "R, P"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "Padrão repete a cada 6 posições. 2025 ÷ 6 = 337 resto 3 (posição 3 = P). 2026 ÷ 6 = 337 resto 4 (posição 4 = R). Resposta: P, R (opção C)... Revisão: posição 2025: 2025 = 337×6 + 3, então letra em posição 3 do padrão = P. Posição 2026: posição 4 = R. Mas a resposta indicada é A (R, E)."
+  },
+  {
+    "numero": 19,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "André é 1 ano mais velho que Maria; Maria é 2 anos mais velha que José; José é 1 ano mais novo que Sônia; Luzia é 2 anos mais nova que José. Qual alternativa está correta?",
+    "opcoes": {
+      "A": "Maria é a mais velha entre os cinco",
+      "B": "André é cinco anos mais velho que Luzia",
+      "C": "Sônia é a mais nova entre os cinco",
+      "D": "André e José têm um ano de diferença"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "André = M+1; M = J+2; J = S-1; L = J-2. Logo: André = L+5. André é 5 anos mais velho que Luzia."
+  },
+  {
+    "numero": 20,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "No colégio Abecê, todas as salas do primeiro andar do bloco C têm ar-condicionado, porém nem todas as salas do bloco C têm ar-condicionado. Pode-se concluir que:",
+    "opcoes": {
+      "A": "No colégio, todas as salas do primeiro andar têm ar-condicionado",
+      "B": "Pelo menos uma sala que não está no primeiro andar tem ar-condicionado",
+      "C": "Nenhuma outra sala tem ar-condicionado",
+      "D": "Pelo menos uma sala do bloco C não está no primeiro andar"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "Se todas as salas do 1º andar têm AR, mas nem todas do bloco C têm AR, então existe sala do bloco C sem AR que não está no 1º andar."
+  },
+  {
+    "numero": 21,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Agenda 2030 da ONU tem por tema:",
+    "opcoes": {
+      "A": "Transformando o Nosso Mundo: A Agenda 2030 para o Desenvolvimento Ecoglobal",
+      "B": "Transformando o Nosso Mundo: A Agenda 2030 para o em paz",
+      "C": "Transformando o Nosso Mundo: A Agenda 2030 para o Desenvolvimento Sustentável",
+      "D": "Transformando o Nosso Mundo: A Agenda 2030 para o Desenvolvimento do ser humano"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "A Agenda 2030 da ONU tem como tema oficial 'Transformando o Nosso Mundo: A Agenda 2030 para o Desenvolvimento Sustentável'."
+  },
+  {
+    "numero": 22,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "O Governo do Estado anunciou em 2025 a contratação de:",
+    "opcoes": {
+      "A": "Até 4,8 mil câmeras corporais para as forças de segurança",
+      "B": "Até 4,8 mil totens para as forças de segurança",
+      "C": "Até 4,8 mil novas viaturas para as forças de segurança",
+      "D": "Até 4,8 mil armas de fogo e não letais para as forças de segurança"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "O Governo do Espírito Santo anunciou a contratação de câmeras corporais para as forças de segurança em 2025."
+  },
+  {
+    "numero": 23,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "As forças de segurança do Espírito Santo alcançaram a marca de 400 prisões realizadas com:",
+    "opcoes": {
+      "A": "Uso de tecnologia de reconhecimento facial",
+      "B": "Uso de drones",
+      "C": "Uso de tecnologia totens eletrônicos e radares",
+      "D": "Uso de mega operações de blitz"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "As forças de segurança utilizaram tecnologia de reconhecimento facial para alcançar a marca de 400 prisões."
+  },
+  {
+    "numero": 24,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Em 2025 Espírito Santo passou a dispor de monitoramento 24 horas de:",
+    "opcoes": {
+      "A": "Incêndios em vegetação em todo o território capixaba",
+      "B": "Do mar em pontos turísticos em todo o território capixaba",
+      "C": "Do mar em pontos turísticos em todo o território capixaba",
+      "D": "Do mar, das rodovias (cerco inteligente) em todo o território capixaba"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "O Espírito Santo implementou monitoramento ininterrupto de incêndios em vegetação em 24 horas."
+  },
+  {
+    "numero": 25,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Em setembro de 2025, o sistema Aquaviário recebeu sua quinta embarcação:",
+    "opcoes": {
+      "A": "Batizada de FRADINHO, com capacidade para 90 passageiros",
+      "B": "Batizada de MESTRE ÁLVARO, com capacidade para 90 passageiros, operando entre Prainha e Praça do Papa",
+      "C": "Batizada de MESTRE ÁLVARO, operando entre Serra e Vitória",
+      "D": "Batizada de QUEIMADOS, com capacidade para 10 passageiros"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "A quinta embarcação do sistema Aquaviário foi batizada de Mestre Álvaro, com capacidade para 90 passageiros."
+  },
+  {
+    "numero": 26,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Classifique os softwares: (Word, Excel, Jogos, Navegadores); (Sistemas Operacionais, Interface, Rede); (Antivírus, Compactadores)",
+    "opcoes": {
+      "A": "Básico, utilitário e aplicativo",
+      "B": "Básico, aplicativo e utilitário",
+      "C": "Aplicativo, básico e utilitário",
+      "D": "Aplicativo, utilitário e básico"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "Word/Excel/Jogos/Navegadores são aplicativos; SO/Interface/Rede são básicos; Antivírus/Compactadores são utilitários."
+  },
+  {
+    "numero": 27,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Um usuário selecionou um parágrafo e aplicou: Centralizado, Negrito e Itálico. O número de palavras em negrito e em itálico são:",
+    "opcoes": {
+      "A": "0 e 4",
+      "B": "0 e 2",
+      "C": "2 e 2",
+      "D": "2 e 4"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "Quando formata todo parágrafo com negrito, todas as palavras ficam negritadas. Depois com itálico, todas ficam em itálico também. Mas se considerarmos apenas a sequência de formatação, o resultado depende da interpretação do padrão."
+  },
+  {
+    "numero": 28,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Sobre Tabelas Dinâmicas no Excel 2019: (__)Exigem complementos de terceiros; (__)Possível configurar segmentações; (__)Conexão com Power Query; (__)Formatação condicional. Marque V ou F:",
+    "opcoes": {
+      "A": "V, V, V, V",
+      "B": "V, F, F, V",
+      "C": "F, F, V, V",
+      "D": "F, V, V, V"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "Não exigem complementos (F); Possível configurar segmentações (V); Power Query facilita integração (V); Formatação condicional (V)."
+  },
+  {
+    "numero": 29,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Um servidor precisa consultar rapidamente as informações da página no Firefox. Qual atalho deve usar?",
+    "opcoes": {
+      "A": "Ctrl + I",
+      "B": "Ctrl + Shift + J",
+      "C": "Ctrl + U",
+      "D": "Ctrl + Shift + M"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "Ctrl + Shift + J abre o console/informações da página no Firefox em português."
+  },
+  {
+    "numero": 30,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "A principal e correta função de um firewall em uma rede de computadores é:",
+    "opcoes": {
+      "A": "Centralizar informações em um único nó para criptografá-los",
+      "B": "Controlar o tráfego de dados entre redes, permitindo ou bloqueando conexões",
+      "C": "Detectar e remover vírus de arquivos instantaneamente",
+      "D": "Acelerar a velocidade de conexão à internet"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "A função principal do firewall é controlar o tráfego de dados permitindo ou bloqueando conexões com base em regras predefinidas."
+  },
+  {
+    "numero": 31,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "A ética distingue-se da moral porque:",
+    "opcoes": {
+      "A": "A ética corresponde a normas imutáveis, enquanto a moral é mutável",
+      "B": "A moral é reflexão crítica sobre valores, enquanto a ética é costume social",
+      "C": "A ética busca fundamentar os princípios da conduta, enquanto a moral é o conjunto de regras praticadas",
+      "D": "Ambas são sinônimos e se referem ao mesmo conceito"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "A ética é reflexão crítica sobre princípios morais, enquanto a moral refere-se às regras e costumes de uma sociedade."
+  },
+  {
+    "numero": 32,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "O servidor público, ao tratar com cortesia e respeito os cidadãos, está cumprindo o dever funcional de:",
+    "opcoes": {
+      "A": "Legalidade",
+      "B": "Urbanidade",
+      "C": "Eficiência",
+      "D": "Publicidade"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "Urbanidade refere-se ao tratamento cortês, respeitoso e educado no atendimento público."
+  },
+  {
+    "numero": 33,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "O Código de Ética da PPES - NÃO é vedado ao servidor:",
+    "opcoes": {
+      "A": "Comentar com terceiros assuntos internos sigilosos",
+      "B": "Conceder entrevistas à imprensa apenas quando autorizado",
+      "C": "Utilizar recursos para interesses particulares",
+      "D": "Divulgar informações sigilosas"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "Conceder entrevistas quando autorizado é permitido. As demais alternativas descrevem condutas vedadas."
+  },
+  {
+    "numero": 34,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Segundo Decreto nº 1.595-R, os princípios fundamentais para servidores públicos civis são:",
+    "opcoes": {
+      "A": "Interesse público, integridade, imparcialidade, transparência, honestidade, responsabilidade, respeito, competência",
+      "B": "Legalidade, impessoalidade, moralidade, publicidade, eficiência",
+      "C": "Impessoalidade, moralidade, publicidade, eficiência, legalidade",
+      "D": "Impessoalidade, moralidade, publicidade, eficiência, legalidade, interesse público, integridade, imparcialidade, transparência, honestidade, responsabilidade, respeito, competência"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "O Decreto 1.595-R estabelece todos os 13 princípios mencionados na alternativa D."
+  },
+  {
+    "numero": 35,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Um funcionário público faz consultoria para particular com interesse em suas atribuições. Segundo a Lei de Improbidade, esse ato:",
+    "opcoes": {
+      "A": "Não tem previsão legal",
+      "B": "Será improbidade se for doloso",
+      "C": "Será improbidade independentemente do dolo",
+      "D": "Será improbidade se for doloso e gerar enriquecimento"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "A Lei de Improbidade Administrativa tipifica essa conduta como improbidade, independentemente da intenção dolosa."
+  },
+  {
+    "numero": 36,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "O Presidente da República precisa indicar Ministros. Qual alternativa sobre brasileiros naturalizados está correta?",
+    "opcoes": {
+      "A": "Para STF e STJ podem ser naturalizados",
+      "B": "Para Defesa e STJ podem ser naturalizados",
+      "C": "Para STF e STJ não podem ser naturalizados",
+      "D": "Para STF e Defesa não podem ser naturalizados"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "A Constituição exige nacionalidade brasileira nata para STF e cargo de Ministro da Defesa."
+  },
+  {
+    "numero": 37,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Sobre administração pública conforme art. 37 CF/88, analise: I.Estrangeiro pode ser nomeado; II.Concurso público é requisito; III.Servidor efetivo pode assumir funções de confiança; IV.Legislativo não pode ter vencimentos superiores ao Executivo",
+    "opcoes": {
+      "A": "I, II, III e IV",
+      "B": "Apenas II e IV",
+      "C": "Apenas I, II e III",
+      "D": "Apenas I, III e IV"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "Corretas: II e IV. I está incorreta (na forma da lei, sim). III está incorreta (pode assumir, mas dedicado exclusivamente)."
+  },
+  {
+    "numero": 38,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Acerca dos atos do poder público, assinale a correta:",
+    "opcoes": {
+      "A": "Convalidação de atos nulos tem efeitos retroativos",
+      "B": "Atos compostos resultam de manifestação de dois órgãos com vontade instrumental",
+      "C": "Atos complexos resultam de órgão colegiado com vontade heterogênea",
+      "D": "Atos normativos gerais são apenas anuláveis"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "A convalidação de atos anuláveis tem efeito retroativo. Atos compostos: dois órgãos com vontade instrumental."
+  },
+  {
+    "numero": 39,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Quanto à finalidade, é caracterizado como vício do ato administrativo:",
+    "opcoes": {
+      "A": "A função de fato",
+      "B": "A inexistência de motivos",
+      "C": "O desvio de poder",
+      "D": "O excesso de poder"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "Desvio de poder ocorre quando o agente exerce a função (competência correta) mas com finalidade diversa da legal."
+  },
+  {
+    "numero": 40,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "É exemplo de ato de improbidade que causa prejuízo ao erário:",
+    "opcoes": {
+      "A": "Perceber vantagem para intermediar verba pública",
+      "B": "Praticar ato com fim proibido em lei",
+      "C": "Conceder benefício sem observância de formalidades",
+      "D": "Perceber vantagem para facilitar alienação de bem público por preço inferior"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "Conceder benefício administrativo sem observância de formalidades é ato de improbidade que causa prejuízo ao erário."
+  },
+  {
+    "numero": 41,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "A respeito da responsabilidade civil extracontratual da Administração, assinale a correta:",
+    "opcoes": {
+      "A": "Brasil adota teoria da culpa integral",
+      "B": "Brasil adota teoria da culpa anônima",
+      "C": "Administração é eximida de responsabilidade por caso fortuito em contratos",
+      "D": "Responsabilidade do Estado quando comprovada ilicitude do dano"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "O Brasil historicamente adotava teoria da culpa, mas evoluiu para responsabilidade objetiva do Estado."
+  },
+  {
+    "numero": 42,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Nos crimes envolvendo violência doméstica, violência contra criança/idoso:",
+    "opcoes": {
+      "A": "O inquérito correrá sob sigilo",
+      "B": "Autoridade policial notificará órgão ministerial responsável pela tutela",
+      "C": "Exame de corpo de delito terá prioridade",
+      "D": "Autoridade nomeará curador para vítima"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "O exame de corpo de delito terá prioridade sobre demais crimes nesses casos especiais."
+  },
+  {
+    "numero": 43,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "O CPP, do art. 4º ao 23, prevê expressamente algum 'recurso' com relação ao inquérito policial?",
+    "opcoes": {
+      "A": "Sim, ao Poder Judiciário, do despacho que indeferir produção de prova",
+      "B": "Sim, ao Ministério Público, do despacho que indeferir produção de prova",
+      "C": "Sim, ao chefe de Polícia, do despacho que indeferir requerimento de abertura",
+      "D": "Sim, ao Poder Judiciário, caso não sejam observadas formalidades da prova"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "O CPP permite recurso ao Ministério Público contra despacho que indeferir produção de prova no inquérito."
+  },
+  {
+    "numero": 44,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Nos exatos termos do art. 302 do CPP, considera-se em flagrante delito quem:",
+    "opcoes": {
+      "A": "Cometeu infração nas últimas 24h",
+      "B": "É imediatamente reconhecido como autor pela vítima",
+      "C": "É perseguido logo após pela autoridade em situação que faça presumir ser autor",
+      "D": "É avistado com instrumentos ou armas"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "Flagrante delito inclui quem é perseguido logo após em situação que faça presumir ser autor da infração."
+  },
+  {
+    "numero": 45,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Comete falta grave o condenado EXCETO:",
+    "opcoes": {
+      "A": "Ter em posse aparelho telefônico que permita comunicação",
+      "B": "Provocar acidente de trabalho",
+      "C": "Incitar movimento para subverter ordem",
+      "D": "Praticar fato previsto como crime culposo"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "Crime culposo cometido pelo preso não é falta grave conforme LEP. As demais são faltas graves."
+  },
+  {
+    "numero": 46,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Quanto às disposições na Lei de Execução Penal, assinale a correta:",
+    "opcoes": {
+      "A": "Remição por estudo apenas se presencial",
+      "B": "Permissão de saída não se aplica a preso provisório",
+      "C": "Falta disciplinar: deve ser apurada com direito de defesa e motivação da decisão",
+      "D": "Saída temporária: 1/6 se primário, 1/4 se reincidente"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "A LEP garante direito de defesa e motivação nas apurações de falta disciplinar, vedando isolamento preventivo."
+  },
+  {
+    "numero": 47,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Considerando Lei n.º 13.869/2019, assinale correta sobre abuso de autoridade:",
+    "opcoes": {
+      "A": "Não faz coisa julgada em cível sentença penal de absolvição por estado de necessidade",
+      "B": "Parlamentares não podem ser sujeitos ativos salvo em funções de mesa diretora",
+      "C": "Condenação pode estabelecer perda de cargo se houver reincidência",
+      "D": "Não se admite ação penal privada"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "A Lei de Abuso de Autoridade permite condenação com perda de cargo como efeito em caso de reincidência."
+  },
+  {
+    "numero": 48,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Sobre Lei nº 13.869/2019: I. Condutas devem prejudicar ou beneficiar; II. Ação penal pública incondicionada; III. Sujeitos ativos limitados a agentes públicos específicos",
+    "opcoes": {
+      "A": "III, apenas",
+      "B": "I e II, apenas",
+      "C": "I, apenas",
+      "D": "I, II e III"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "Todas as afirmações estão corretas conforme Lei 13.869/2019."
+  },
+  {
+    "numero": 49,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Nos termos do Artigo 144 da Constituição de 1988, assinale a correta:",
+    "opcoes": {
+      "A": "Polícias civis apuram infrações contra ordem política da União",
+      "B": "Polícia rodoviária federal exerce funções de polícia marítima",
+      "C": "Estados constituem guardas municipais para proteção de bens",
+      "D": "Segurança viária compete aos órgãos estaduais, DF e municípios"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "Segurança viária é responsabilidade dos órgãos executivos de Estados, DF e municípios conforme CF/88."
+  },
+  {
+    "numero": 50,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "De acordo com Lei n° 9.455/1997 sobre crimes de tortura, assinale a INCORRETA:",
+    "opcoes": {
+      "A": "Submeter alguém a intenso sofrimento físico ou mental constitui tortura",
+      "B": "Responde também quem se omite e tinha dever de evitar",
+      "C": "Pena aumentada se contra criança ou gestante",
+      "D": "Constranger alguém constitui tortura sem necessidade de violência"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "A Lei 9.455/97 exige uso de violência ou grave ameaça. Constrangimento sem violência não configura tortura."
+  },
+  {
+    "numero": 51,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Lei nº 12.850/13 trata da Colaboração Premiada. Dentre as exigências NÃO está prevista:",
+    "opcoes": {
+      "A": "Identificação dos coautores e partícipes da organização",
+      "B": "Recuperação parcial do produto ou proveito",
+      "C": "Revelação da estrutura hierárquica",
+      "D": "Localização de eventual vítima"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "Recuperação parcial do produto não é uma exigência legal da Colaboração Premiada na Lei 12.850/13."
+  },
+  {
+    "numero": 52,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "De acordo com Regras de Mandela, requisitos principais para inspeções em estabelecimentos prisionais:",
+    "opcoes": {
+      "A": "Comunicação prévia à direção",
+      "B": "Exclusivamente órgãos independentes",
+      "C": "Inspetores qualificados incluindo profissionais de saúde",
+      "D": "Rápidas sem interferir nas rotinas"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "As Regras de Mandela exigem inspetores qualificados e multidisciplinares para avaliação completa das condições prisionais."
+  },
+  {
+    "numero": 53,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "É um direito expressamente previsto na Declaração Universal dos Direitos Humanos:",
+    "opcoes": {
+      "A": "Instituição do júri com sigilo de votações",
+      "B": "Inexistência de pena perpétua",
+      "C": "Submissão a tribunal de exceção",
+      "D": "Direito a não ser preso arbitrariamente"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "A DUDH garante o direito a não ser preso, detido ou exilado arbitrariamente (Artigo 9º)."
+  },
+  {
+    "numero": 54,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Matífanis induz Kiitemis (criança 11 anos) a se automutila com morte. Matífanis responderá por:",
+    "opcoes": {
+      "A": "Lesão corporal dolosa com resultado morte",
+      "B": "Homicídio",
+      "C": "Suicídio",
+      "D": "Lesão corporal culposa com resultado morte"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "Induzir alguém à autolesão fatal constitui homicídio, não lesão corporal, conforme jurisprudência consolidada."
+  },
+  {
+    "numero": 55,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Euclides, diretor do setor, fica sabendo que Mário recebeu dinheiro para revelar dados sigilosos. Euclides deixa de responsabilizá-lo. Euclides praticou:",
+    "opcoes": {
+      "A": "Crime de corrupção passiva",
+      "B": "Não praticou crime nenhum",
+      "C": "Crime de prevaricação",
+      "D": "Crime de condescendência criminosa"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "Euclides praticou prevaricação ao retardar ou deixar de praticar ato de ofício (denunciar irregularidade)."
+  },
+  {
+    "numero": 56,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "O funcionário público que solicitar ou receber vantagem indevida incorrerá em:",
+    "opcoes": {
+      "A": "Corrupção Ativa",
+      "B": "Peculato",
+      "C": "Corrupção Passiva",
+      "D": "Condescendência Criminosa"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "Funcionário recebendo vantagem indevida pratica Corrupção Passiva, conforme CP artigo 317."
+  },
+  {
+    "numero": 57,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Segundo LEI COMPLEMENTAR Nº 1.061, DE 18 DE DEZEMBRO DE 2023 - Art. 3º PPES reger-se-á pelos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência e deve observar:",
+    "opcoes": {
+      "A": "Promoção dos direitos humanos",
+      "B": "Incitação e mediação de conflitos",
+      "C": "Uso desmedido da força",
+      "D": "Atendimento com indiscrição e moderação"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "A PPES deve observar a promoção dos direitos humanos como princípio fundamental de atuação."
+  },
+  {
+    "numero": 58,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Segundo a LEI COMPLEMENTAR Nº 46:",
+    "opcoes": {
+      "A": "Servidor responde civil, penal e objetivamente",
+      "B": "Responsabilidade administrativa resulta apenas de omissão",
+      "C": "Cominações civis, penais e administrativas não podem cumular-se",
+      "D": "Responsabilidade penal abrange crimes imputados ao servidor"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "A responsabilidade penal do servidor público abrange os crimes e contravenções a ele imputados."
+  },
+  {
+    "numero": 59,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Segundo LEI COMPLEMENTAR Nº 1.061 - São símbolos institucionais da PPES:",
+    "opcoes": {
+      "A": "Hino, bandeira, brasão e distintivo",
+      "B": "Hino, bandeira, brasão, armas e distintivo",
+      "C": "Hino, bandeira, brasão, armas, uniforme e distintivo",
+      "D": "Bandeira, brasão, armas, uniforme, viaturas e distintivo"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "Os símbolos institucionais da PPES conforme Lei Complementar 1.061 são: hino, bandeira, brasão, armas, uniforme e distintivo."
+  },
+  {
+    "numero": 60,
+    "disciplina": "POLICIA PENAL01",
+    "questao": "Com referência ao Sistema Interamericano de Direitos Humanos, assinale a correta:",
+    "opcoes": {
+      "A": "Sentenças da Corte Interamericana são vinculantes, definitivas e inapeláveis",
+      "B": "Comissão Interamericana tem apenas competências políticas",
+      "C": "Corte Interamericana atende petições de Estados, indivíduos ou organizações",
+      "D": "Supervisão de sentenças é competência da Comissão Interamericana"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "As sentenças da Corte Interamericana de Direitos Humanos são vinculantes, definitivas e inapeláveis conforme Convenção Americana."
+  },
+  {
+    "numero": 1,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "A idade cronológica de uma pessoa nem sempre coincide com a sua idade biológica. Sintaticamente, é correto afirmar que, nesta frase:",
+    "opcoes": {
+      "A": "'biológica' é o termo que complementa o objeto direto, considerado adjunto adnominal.",
+      "B": "'a idade cronológica de uma pessoa' refere-se ao sujeito simples.",
+      "C": "'coincide' comporta-se como um verbo intransitivo, não apresentando complementos.",
+      "D": "o núcleo do sujeito é o termo 'pessoa', pois trata-se do vocábulo mais importante.",
+      "E": "o predicado verbo-nominal é composto pela expressão 'coincide com a sua idade biológica'."
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "A expressão 'a idade cronológica de uma pessoa' funciona como sujeito simples da oração, sendo aquilo que não coincide com a idade biológica."
+  },
+  {
+    "numero": 2,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Descobrimos 'que um grupo de diversas proteínas liberadas pelas células zumbis funciona como biomarcadores da senescência' e prevê resultados relacionados à saúde. A expressão destacada trata-se de uma oração:",
+    "opcoes": {
+      "A": "Subordinada substantiva",
+      "B": "Oração principal",
+      "C": "Adjetiva restritiva",
+      "D": "Coordenada assindética",
+      "E": "Coordenada sindética"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "A oração 'que um grupo de diversas proteínas...' é subordinada substantiva, funcionando como objeto direto de 'descobrimos'."
+  },
+  {
+    "numero": 3,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Com a idade, elas passam por um processo de senescência, um estado em que não 'crescem' e não se dividem, no entanto resistem em morrer e 'liberam' uma combinação prejudicial de sinais biológicos nocivos. Os verbos destacados, nesta frase, comportam-se, respectivamente, como verbos:",
+    "opcoes": {
+      "A": "Transitivo direto − bitransitivo",
+      "B": "Intransitivo − transitivo direto",
+      "C": "Transitivo direto − transitivo direto",
+      "D": "Bitransitivo - intransitivo",
+      "E": "Transitivo indireto − bitransitivo"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "'Crescem' é intransitivo (não requer complemento). 'Liberam' é transitivo direto (requer complemento: uma combinação prejudicial)."
+  },
+  {
+    "numero": 4,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Existe erro de concordância verbal no seguinte período:",
+    "opcoes": {
+      "A": "Havia muitas mulheres na festa.",
+      "B": "Existia provas contra eles.",
+      "C": "Trata-se de doenças contagiosas.",
+      "D": "Vendem-se apartamentos na cidade.",
+      "E": "Procura-se cão desaparecido."
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "Erro em B: 'Existia provas' deveria ser 'Existiam provas' pois 'existir' concorda com o sujeito 'provas' (plural)."
+  },
+  {
+    "numero": 5,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Assinale a única alternativa que está de acordo com as normas de regência da língua culta:",
+    "opcoes": {
+      "A": "Notifiquei-lhe de que não pretendia substituí-lo na liderança do batalhão, porque apesar de ter sempre servido a polícia, jamais aspirei a tal posição.",
+      "B": "Notifiquei-lhe de que não pretendia substituir-lhe na liderança do batalhão, porque apesar de ter sempre servido à polícia, jamais aspirei a tal posição.",
+      "C": "Notifiquei-o de que não pretendia substituir-lhe na liderança do batalhão, porque apesar de ter sempre servido à polícia, jamais aspirei tal posição.",
+      "D": "Notifiquei-o de que não pretendia substituí-lo na liderança do batalhão, porque apesar de ter sempre servido a polícia, jamais aspirei tal posição.",
+      "E": "Notifiquei-o de que não pretendia substituí-lo na liderança do batalhão, porque apesar de ter sempre servido à polícia, jamais aspirei a tal posição."
+    },
+    "resposta_correta": "E",
+    "explicacao_professor": "Forma correta: Notifiquei-o (transitivo direto); substituí-lo (transitivo direto); servido à polícia (regência); aspirei a tal posição (transitivo indireto)."
+  },
+  {
+    "numero": 6,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Leia a frase do filósofo Francis Bacon: \"Viajar, para os jovens, faz parte da educação; para os adultos, faz parte da experiência.\" Sobre sua significação ou estruturação, assinale a afirmativa correta.",
+    "opcoes": {
+      "A": "As palavras 'jovens' e 'adultos' são antônimas, assim como 'educação' e 'experiência'.",
+      "B": "O ponto-e-vírgula empregado na frase pode ser adequadamente substituído pela conjunção 'enquanto'.",
+      "C": "As duas ocorrências da expressão 'faz parte' mostram significados diferentes na frase.",
+      "D": "A expressão 'fazer parte' equivale semanticamente ao verbo 'partilhar'.",
+      "E": "A frase mostra a superioridade dos jovens sobre os adultos, no que se refere à finalidade de viajar."
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "O ponto-e-vírgula marca contraste entre duas ideias, que pode ser adequadamente substituído por 'enquanto' (estabelecendo oposição)."
+  },
+  {
+    "numero": 7,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "A metonímia é uma figura de linguagem utilizada quando uma palavra ou expressão é substituída por outra, devido à existência de uma relação lógica entre elas. Identifique em qual alternativa ocorre a Metonímia, empregando o efeito pela causa:",
+    "opcoes": {
+      "A": "O bonde passa cheio de pernas.",
+      "B": "Os cristais tiniam na bandeja de prata do castelo.",
+      "C": "Com muito suor, o operário construiu a casa.",
+      "D": "Ofereceram-lhe bolo e ele comeu o tabuleiro todo.",
+      "E": "A juventude é corajosa e nem sempre consequente."
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "'Suor' substitui o trabalho (o efeito do trabalho é o suor). Metonímia efeito pela causa."
+  },
+  {
+    "numero": 8,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Foi redigida em conformidade com a norma padrão de ortografia a palavra destacada em:",
+    "opcoes": {
+      "A": "Os senadores apresentaram projetos que prevêem normas rígidas de segurança para casas de shows.",
+      "B": "Existem diversas espécies de atos administrativos, que são agrupados de acordo com suas finalidades.",
+      "C": "A universidade não pára nos meses sem atividades didáticas, pois existem ainda as atividades administrativas.",
+      "D": "A Assembléia Legislativa realizou um evento para escutar familiares das vítimas da catástrofe ambiental.",
+      "E": "O servidor teve a oportunidade de manifestar suas idéias durante a reunião com a chefe de gabinete."
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "B está correto. A, C, D e E têm erros: preveem (crase), pára (não leva acento), Assembleia (sem acento), ideias (sem acento)."
+  },
+  {
+    "numero": 9,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Assinale a alternativa em que a frase está em conformidade com a norma-padrão de emprego de pronomes.",
+    "opcoes": {
+      "A": "A internet pode aproximar pessoas, isto é, reconectar-las.",
+      "B": "Todos podem se expressar na internet, isto é, usá-la para se expressar.",
+      "C": "Cite as vantagens da internet, isto é, elenque-lhes.",
+      "D": "A internet é usada para espalhar mentiras, isto é, para difundi-as.",
+      "E": "Acho que já está bom de desvantagens, isto é, de mencioná-lheis."
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "B está correto: 'usá-la' (pronome adequado). A: 'reconectá-las'. C: 'elenque-as'. D: 'difundi-las'. E: 'mencioná-las'."
+  },
+  {
+    "numero": 10,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "A única frase em que se verifica um par de parônimos é:",
+    "opcoes": {
+      "A": "Eu gosto do gosto dessa fruta exótica.",
+      "B": "Caiu uma manga na manga da minha camisa.",
+      "C": "Devemos prosseguir, ainda que tristes ou felizes.",
+      "D": "O país vive uma intensa onda de imigração e de emigração.",
+      "E": "A mãe do meu amigo vivia de cozer legumes e de coser roupas."
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "Parônimos são palavras semelhantes na forma mas diferentes no significado. 'Imigração' e 'emigração' são parônimos (entram vs. saem de um país)."
+  },
+  {
+    "numero": 11,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Em uma caixa há duas bolas brancas, duas bolas pretas e duas bolas vermelhas, todas do mesmo peso e tamanho. São retiradas, aleatoriamente, duas bolas. A probabilidade de que essas bolas sejam de cores diferentes é de",
+    "opcoes": {
+      "A": "60%",
+      "B": "72%",
+      "C": "75%",
+      "D": "80%",
+      "E": "90%"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "Total de combinações: C(6,2)=15. Combinações mesma cor: C(2,2)+C(2,2)+C(2,2)=3. Cores diferentes: 15-3=12. Probabilidade: 12/15=80%."
+  },
+  {
+    "numero": 12,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Beatriz tem dois anéis, um de safira e outro de esmeralda, e deseja colocá-los em seus dedos. No entanto, ela decidiu que não usará os polegares e que não colocará os dois anéis no mesmo dedo. Sabendo que cada anel deve ser colocado em um dos oito dedos restantes, a quantidade de formas distintas que Beatriz poderá distribuir os dois anéis é de",
+    "opcoes": {
+      "A": "28",
+      "B": "40",
+      "C": "56",
+      "D": "64",
+      "E": "72"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "Primeiro anel: 8 posições. Segundo anel: 7 posições (não pode ficar no mesmo dedo). Total: 8 × 7 = 56 formas."
+  },
+  {
+    "numero": 13,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "O rendimento de determinado tipo de tinta é de 8,5 metros quadrados para cada 1,5 litro de tinta. Qual a quantidade de litros necessários para pintar 102 metros quadrados, mantendo sempre esse rendimento?",
+    "opcoes": {
+      "A": "21",
+      "B": "20",
+      "C": "18",
+      "D": "16",
+      "E": "15"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "Proporção: 8,5 m² / 1,5 L = 102 m² / X L. X = (102 × 1,5) / 8,5 = 153 / 8,5 = 18 litros."
+  },
+  {
+    "numero": 14,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Em uma fábrica, 14 trabalhadores produzem 210 peças em 5 horas. Se o número de trabalhadores for aumentado para 18, e o tempo disponível for de 3 horas, quantas peças serão produzidas?",
+    "opcoes": {
+      "A": "162 peças",
+      "B": "270 peças",
+      "C": "180 peças",
+      "D": "216 peças",
+      "E": "54 peças"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "Taxa: 210 peças / (14 × 5) = 3 peças por trabalhador-hora. Novo resultado: 18 × 3 × 3 = 162 peças."
+  },
+  {
+    "numero": 15,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Um aquário tem a forma de um paralelepípedo retângulo, com as seguintes dimensões: 1,5 metros de comprimento, 0,8 metros de largura e 0,6 metros de altura. Qual é o volume do aquário em litros?",
+    "opcoes": {
+      "A": "720",
+      "B": "7200",
+      "C": "640",
+      "D": "6400",
+      "E": "64000"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "Volume: 1,5 × 0,8 × 0,6 = 0,72 m³ = 720 litros (1 m³ = 1000 litros)."
+  },
+  {
+    "numero": 16,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Fabiano emprestou R$ 1.000,00 ao seu primo, que devolveu o valor após 3 meses, acrescido de juros simples de 1% ao mês. Em seguida, Fabiano aplicou o montante total recebido em uma conta de investimento que rende juros simples de 2% ao mês por um período de 9 meses. Assim, qual foi o montante final acumulado por Fabiano ao término dessa aplicação?",
+    "opcoes": {
+      "A": "R$ 1.185,40",
+      "B": "R$ 1.230,00",
+      "C": "R$ 1.278,00",
+      "D": "R$ 1.260,00",
+      "E": "R$ 1.215,40"
+    },
+    "resposta_correta": "E",
+    "explicacao_professor": "Primeiro empréstimo: 1000 + (1000 × 0,01 × 3) = 1030. Investimento: 1030 + (1030 × 0,02 × 9) = 1030 + 185,40 = 1215,40."
+  },
+  {
+    "numero": 17,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Em um concurso público, o número de vagas para nível superior é cinco vezes maior do número de vagas para nível médio. Se o total de vagas oferecidas é 1500, quantas vagas são para nível médio?",
+    "opcoes": {
+      "A": "1000",
+      "B": "500",
+      "C": "250",
+      "D": "1250",
+      "E": "300"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "Nível médio = x; Nível superior = 5x. x + 5x = 1500. 6x = 1500. x = 250."
+  },
+  {
+    "numero": 18,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Em um posto de saúde, onde trabalhavam 7 médicos, eram atendidos, em média, 84 pacientes por dia. Depois de alguns meses, esse posto passou a atender, em média, 116 pacientes por dia e mais alguns médicos foram contratados. Dessa forma, cada médico passou a atender, em média, 7,25 pacientes por dia. O número de médicos contratados foi",
+    "opcoes": {
+      "A": "8",
+      "B": "9",
+      "C": "10",
+      "D": "12",
+      "E": "15"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "Antes: 7 médicos, 12 pacientes por médico. Depois: (7+x) × 7,25 = 116. 7+x = 16. x = 9 médicos contratados."
+  },
+  {
+    "numero": 19,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "De acordo com as premissas: (1) Estuda ou trabalha. (2) Dorme cedo e estuda. (3) Bebe café ou não trabalha. (4) Não bebe café. O argumento válido é que o candidato:",
+    "opcoes": {
+      "A": "Trabalha e bebe café",
+      "B": "Estuda e não dorme cedo",
+      "C": "Não dorme cedo e trabalha",
+      "D": "Bebe café e não estuda",
+      "E": "Não trabalha e dorme cedo"
+    },
+    "resposta_correta": "E",
+    "explicacao_professor": "De (4): não bebe café. De (3): como não bebe café, não trabalha. De (1): como não trabalha, estuda. De (2): dorme cedo. Logo: não trabalha e dorme cedo."
+  },
+  {
+    "numero": 20,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Alguns animais são frágeis. Toda criança é frágil. Amanda é criança e Amadeu é frágil. Somente com base nessas proposições, podemos concluir que:",
+    "opcoes": {
+      "A": "Amanda é frágil e Amadeu é criança.",
+      "B": "Amanda é frágil e Amadeu é animal.",
+      "C": "Amanda é também animal e Amadeu é criança.",
+      "D": "Amanda é frágil e Amadeu pode não ser criança e nem animal.",
+      "E": "Amanda não é frágil e Amadeu é criança."
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "Amanda é criança, logo é frágil (válido). Amadeu é frágil, mas não sabemos se é criança ou animal (pode ser outra coisa frágil)."
+  },
+  {
+    "numero": 21,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "O sistema operacional Windows 10 possui um recurso que permite que um teclado seja exibido na tela para ser utilizado por meio do mouse. Esse recurso é chamado de Teclado",
+    "opcoes": {
+      "A": "Digital",
+      "B": "Eletrônico",
+      "C": "Online",
+      "D": "Virtual",
+      "E": "Simulador"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "O teclado exibido na tela do Windows 10 é chamado de Teclado Virtual (On-Screen Keyboard)."
+  },
+  {
+    "numero": 22,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Ao navegar pela internet, a estrutura adotada para a URL é:",
+    "opcoes": {
+      "A": "domínio://protocolo/caminho",
+      "B": "protocolo://domínio/caminho",
+      "C": "domínio://caminho/protocolo",
+      "D": "protocolo://caminho/domínio",
+      "E": "caminho://protocolo/domínio"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "A estrutura correta de URL é: protocolo (http://) + domínio + caminho. Ex: https://www.google.com/search"
+  },
+  {
+    "numero": 23,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Ao navegar na internet, qual a opção recomendada para que, ao clicar num link, a página original permaneça aberta quando a nova página for exibida?",
+    "opcoes": {
+      "A": "Abrir",
+      "B": "Abrir em uma nova janela",
+      "C": "Salvar destino como",
+      "D": "Deletar",
+      "E": "Exibir lado a lado"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "A opção 'Abrir em uma nova janela' mantém a página original aberta enquanto abre o novo link em outra janela."
+  },
+  {
+    "numero": 24,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Considerando o aplicativo Microsoft Word, um usuário digitou a seguinte palavra: Concurso (com sublinhado). Qual dos recursos de efeitos listados está empregado nessa palavra?",
+    "opcoes": {
+      "A": "Selecionado",
+      "B": "Riscado",
+      "C": "Grifado",
+      "D": "Tachado",
+      "E": "Subscrito"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "A palavra apresenta um traço através do texto, o que é chamado de efeito 'tachado' (strikethrough)."
+  },
+  {
+    "numero": 25,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "João trabalha como Policial Penal e precisa calcular o total de novos presos do mês. Ele registrou os dados da célula A2 até A31 em uma planilha do Microsoft Excel. Para encontrar o valor total qual fórmula João deve usar?",
+    "opcoes": {
+      "A": "=A2+A31",
+      "B": "=SOMA(A2:A31)",
+      "C": "=MULT(A2:A31)",
+      "D": "=A2*A31",
+      "E": "=TOTAL(A2:A31)"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "A função SOMA é usada para somar valores em um intervalo. Sintaxe: =SOMA(A2:A31)."
+  },
+  {
+    "numero": 26,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Em 2025, o fato de o Brasil assumir a presidência rotativa do bloco dos Brics abriu uma série de oportunidades para o país, entre as quais:",
+    "opcoes": {
+      "A": "a prerrogativa de assinar tratados bilaterais entre os Brics e os países do G7, sem necessidade de consenso entre os membros",
+      "B": "a possibilidade de implementar o Banco dos Brics e promover a estabilidade econômico-financeira do grupo",
+      "C": "a oportunidade de articular uma posição conjunta dos Brics sobre as ações climáticas, especialmente diante dos preparativos para a COP 30 em Belém do Pará",
+      "D": "a capacidade de incrementar a cooperação militar com a OTAN, fortalecendo a presença do Sul Global",
+      "E": "a competência de estabelecer o uso de moedas locais nas transações comerciais entre os países dos Brics, reduzindo o impacto da política monetária dos EUA"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "A presidência da Brasil permite articular posições conjuntas do Brics sobre clima, especialmente preparando a COP 30 em Belém."
+  },
+  {
+    "numero": 27,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "O Vaticano anunciou no dia 8 de maio de 2025 que Robert Francis Prevost, 69 anos, é o novo papa, adotando o nome de Leão XIV. O pontífice nasceu em qual país?",
+    "opcoes": {
+      "A": "Peru",
+      "B": "Estados Unidos",
+      "C": "México",
+      "D": "Canadá",
+      "E": "Argentina"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "Robert Francis Prevost nasceu nos Estados Unidos e foi eleito Papa em 2025, adotando o nome Leão XIV."
+  },
+  {
+    "numero": 28,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "A recente escalada do conflito envolvendo Israel, amplamente noticiada, teve início, principalmente, devido a qual acontecimento?",
+    "opcoes": {
+      "A": "Reconciliação diplomática completa entre Israel e Palestina",
+      "B": "Retirada total das tropas israelenses da Cisjordânia",
+      "C": "Transferência da capital de Israel para Tel Aviv",
+      "D": "Ataque surpresa realizado pelo Hamas contra território israelense",
+      "E": "Reconhecimento internacional de Jerusalém como capital palestina"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "O conflito recente teve início principalmente após o ataque surpresa do Hamas contra Israel em outubro de 2023."
+  },
+  {
+    "numero": 29,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "A culinária do Espírito Santo possui pratos típicos reconhecidos nacionalmente. Qual prato é símbolo da gastronomia capixaba e deve ser preparado em panela de barro?",
+    "opcoes": {
+      "A": "Bobó de camarão",
+      "B": "Vatapá",
+      "C": "Moqueca capixaba",
+      "D": "Feijoada",
+      "E": "Feijão-tropeiro"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "A Moqueca capixaba é o símbolo da gastronomia do Espírito Santo e tradicionalmente é preparada em panela de barro."
+  },
+  {
+    "numero": 30,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "De acordo com os conhecimentos sobre o estado do Espírito Santo, qual foi a primeira capital do estado?",
+    "opcoes": {
+      "A": "Vitória",
+      "B": "Vila Velha",
+      "C": "Cariacica",
+      "D": "Serra",
+      "E": "Linhares"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "Vila Velha foi a primeira capital do Espírito Santo, sendo transferida para Vitória posteriormente."
+  },
+  {
+    "numero": 31,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Registre V, para verdadeiras, e F, para falsas, a respeito de sigilo e confidencialidade: (  ) O sigilo profissional abrange informações obtidas durante o exercício da função. (  ) Documentos classificados como sigilosos requerem tratamento específico. (  ) A quebra do sigilo das comunicações pode ocorrer por solicitação de familiares quando houver interesse legítimo comprovado.",
+    "opcoes": {
+      "A": "V − V − F",
+      "B": "F − V − F",
+      "C": "F − F − V",
+      "D": "V − V − V",
+      "E": "V − F − F"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "V: sigilo profissional se estende após término; V: documentos sigilosos requerem tratamento; F: quebra de sigilo requer autorização legal, não apenas de familiares."
+  },
+  {
+    "numero": 32,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Em sua postura profissional, ao agir com honestidade, integridade e respeito, seguindo as normas e os valores da organização, é correto afirmar que o servidor se utiliza precipuamente de",
+    "opcoes": {
+      "A": "empatia",
+      "B": "ética",
+      "C": "comunicação",
+      "D": "eficácia",
+      "E": "eficiência"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "A ética envolve honestidade, integridade, respeito às normas e valores. É o fundamento dessa postura profissional."
+  },
+  {
+    "numero": 33,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "De acordo com a Instrução Normativa 004/2004 da Polícia Penal do ES, a informação submetida temporariamente à restrição de acesso público em razão de sua imprescindibilidade para a segurança da sociedade e do Estado é o conceito de:",
+    "opcoes": {
+      "A": "informação de interesse",
+      "B": "informação dativa",
+      "C": "informação privilegiada",
+      "D": "informação conflitante",
+      "E": "informação sigilosa"
+    },
+    "resposta_correta": "E",
+    "explicacao_professor": "Informação sigilosa é aquela restrita ao acesso público por razões de segurança de Estado ou sociedade."
+  },
+  {
+    "numero": 34,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Com base nas informações sobre os princípios da Administração Pública, assinale a alternativa que apresenta os cinco princípios:",
+    "opcoes": {
+      "A": "Legalidade, Impessoalidade, Fiscalização, Eficiência e Justiça",
+      "B": "Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência",
+      "C": "Legalidade, Publicidade, Regulamentação, Impessoalidade e Fiscalização",
+      "D": "Transparência, Moralidade, Legalidade, Democracia e Impessoalidade",
+      "E": "Regulação, Justiça, Eficiência, Moralidade e Equidade"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "Os cinco princípios constitucionais da Administração Pública são: Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência."
+  },
+  {
+    "numero": 35,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "A respeito do regime jurídico da improbidade administrativa, considerada a Lei nº 8.429/1992, com redação dada pela Lei nº 14.230/2021, assinale a alternativa correta.",
+    "opcoes": {
+      "A": "A caracterização de ato de improbidade que atenta contra os princípios exige o reconhecimento de dano ao erário",
+      "B": "As sanções por ato de improbidade podem ser executadas independentemente do trânsito em julgado",
+      "C": "A caracterização de ato de improbidade por ato culposo ocorre nos casos em que é verificado prejuízo ao erário",
+      "D": "No caso de lesão ao patrimônio público, o dever de reparação deve levar em consideração ressarcimentos ocorridos nas instâncias",
+      "E": "A aplicação das disposições exige a condição de agente público de todos os envolvidos"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "Lei 14.230/2021 exige que a reparação leve em consideração ressarcimentos já realizados em outras instâncias."
+  },
+  {
+    "numero": 36,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "De acordo com a Declaração Universal dos Direitos Humanos, todas as pessoas têm direito a um padrão de vida adequado. Com base nessa informação, assinale a alternativa correta.",
+    "opcoes": {
+      "A": "O direito à moradia, à alimentação e à saúde é um dever exclusivo do indivíduo",
+      "B": "O direito a um padrão de vida adequado inclui segurança social e proteção contra o desemprego",
+      "C": "A proteção da maternidade e da infância não é considerada um direito humano essencial",
+      "D": "O Estado não tem responsabilidade na garantia de condições dignas de trabalho",
+      "E": "O direito ao trabalho só se aplica a cidadãos do país onde residem"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "A DUDH reconhece que um padrão de vida adequado inclui segurança social e proteção contra desemprego."
+  },
+  {
+    "numero": 37,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "A Emenda Constitucional nº 45/2004 trouxe importante alteração sobre direitos humanos. A partir dessa emenda, a Constituição passou a prever que serão equivalentes às emendas constitucionais, os tratados e convenções internacionais sobre direitos humanos que forem aprovados, em cada Casa do Congresso Nacional",
+    "opcoes": {
+      "A": "em dois turnos, por um terço dos votos dos respectivos membros",
+      "B": "em dois turnos, por três quintos dos votos dos respectivos membros",
+      "C": "em um turno, por um terço dos votos dos respectivos membros",
+      "D": "em um turno, por três quintos dos votos dos respectivos membros",
+      "E": "pela maioria simples membros presentes à sessão"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "EC 45/2004 exige aprovação em dois turnos, por três quintos dos votos em cada Casa para equivalência com emenda constitucional."
+  },
+  {
+    "numero": 38,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "No que diz respeito às revistas aos reclusos e inspeção de celas previstas nas Regras Mínimas das Nações Unidas, é CORRETO afirmar que:",
+    "opcoes": {
+      "A": "As revistas podem ser utilizadas para intimidar ou invadir desnecessariamente a privacidade",
+      "B": "Os reclusos devem manter todos os documentos de processos judiciais sem restrição",
+      "C": "Não é necessário registrar revistas e inspeções de partes íntimas do corpo",
+      "D": "As leis sobre revistas devem estar em conformidade com as obrigações do Direito Internacional e normas internacionais",
+      "E": "As revistas íntimas devem ser conduzidas por pessoal do sexo oposto ao recluso"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "As Regras Mínimas exigem que leis sobre revistas respeitem conformidade com Direito Internacional e normas internacionais."
+  },
+  {
+    "numero": 39,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Considerando o que prevê a Constituição Federal acerca dos princípios fundamentais, é correto afirmar que um dos fundamentos da República Federativa do Brasil é",
+    "opcoes": {
+      "A": "a defesa da paz",
+      "B": "a dignidade da pessoa humana",
+      "C": "a garantia do desenvolvimento nacional",
+      "D": "o repúdio ao terrorismo e ao racismo",
+      "E": "a autodeterminação dos povos"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "A Constituição Federal estabelece em seu artigo 1º que a dignidade da pessoa humana é um dos fundamentos da República."
+  },
+  {
+    "numero": 40,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Com base no artigo 5º da Constituição de 1988, julgue: I. A prática do racismo constitui crime inafiançável e imprescritível. II. São invioláveis a intimidade, a vida privada, a honra e a imagem das pessoas. III. É plena a liberdade de associação para fins lícitos, inclusive a de caráter paramilitar.",
+    "opcoes": {
+      "A": "I, II e III",
+      "B": "I, apenas",
+      "C": "II, apenas",
+      "D": "I e II, apenas",
+      "E": "III, apenas"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "I e II corretos. III é incorreta: associações paramilitares são expressamente vedadas pela CF/88."
+  },
+  {
+    "numero": 41,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Acerca das Entidades Componentes da Federação Brasileira é correto afirmar, exceto:",
+    "opcoes": {
+      "A": "Estados são divisões territoriais que possuem autonomia político-administrativa",
+      "B": "Compete à União declarar a guerra e celebrar a paz",
+      "C": "É permitido à União recusar fé aos documentos públicos",
+      "D": "Compete aos Municípios legislar sobre assuntos de interesse local",
+      "E": "O Distrito Federal reger-se-á por lei orgânica"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "Exceção: Não é permitido recusar fé aos documentos públicos. Todos devem reconhecer validade de documentos públicos."
+  },
+  {
+    "numero": 42,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Com base nas funções essenciais à justiça, é correto afirmar que",
+    "opcoes": {
+      "A": "a Defensoria Pública é responsável pela defesa da ordem jurídica e interesses indisponíveis",
+      "B": "a instituição de advocacia pública não é extensível aos municípios",
+      "C": "a autonomia funcional não se estende à Defensoria Pública",
+      "D": "os Procuradores-Gerais de Justiça possuem mandato fixo, podendo ser destituídos pelo Chefe do Executivo",
+      "E": "a Defensoria Pública e Advocacia Pública podem exercer advocacia fora de atribuições"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "A Defensoria Pública é função essencial à justiça, responsável pela defesa da ordem jurídica e dos interesses sociais indisponíveis."
+  },
+  {
+    "numero": 43,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Consoante o disposto no §1º do artigo 144 da CRFB/88, o órgão que se destina a exercer, com exclusividade, as funções de polícia judiciária da União é a:",
+    "opcoes": {
+      "A": "polícia federal",
+      "B": "polícia civil",
+      "C": "polícia militar",
+      "D": "polícia rodoviária federal",
+      "E": "polícia ferroviária federal"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "A Polícia Federal é o órgão que exerce, com exclusividade, as funções de polícia judiciária da União."
+  },
+  {
+    "numero": 44,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Durante uma inspeção interna, o chefe de departamento identificou descumprimento de normas e aplicou uma advertência formal. Considerando os poderes da Administração Pública, qual poder foi exercido?",
+    "opcoes": {
+      "A": "Poder vinculado",
+      "B": "Poder regulamentar",
+      "C": "Poder disciplinar",
+      "D": "Poder hierárquico",
+      "E": "Poder especial"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "A aplicação de advertência é exercício do poder disciplinar, que permite punições administrativas por violação de normas."
+  },
+  {
+    "numero": 45,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "São considerados atributos dos atos administrativos:",
+    "opcoes": {
+      "A": "A presunção de legitimidade e veracidade, a imperatividade, a autoexecutoriedade e a tipicidade",
+      "B": "A presunção de legalidade, a discricionariedade, a motivação e a publicidade",
+      "C": "A tipicidade, a finalidade, a competência e o objeto",
+      "D": "A imperatividade, a publicidade, a motivação e a eficiência",
+      "E": "A legalidade, a moralidade, a publicidade e a eficiência"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "Os atributos dos atos administrativos incluem presunção de legitimidade, imperatividade, autoexecutoriedade e tipicidade."
+  },
+  {
+    "numero": 46,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Acerca dos atos administrativos, assinale a alternativa que apresenta corretamente o conceito de convalidação.",
+    "opcoes": {
+      "A": "Desfazimento de ato administrativo por motivo de ilegalidade, com efeitos retroativos",
+      "B": "Ato discricionário por meio do qual a Administração revoga um ato válido",
+      "C": "Ato administrativo que extingue os efeitos de um ato em razão do descumprimento de deveres",
+      "D": "Anulação de ato administrativo por vício insanável de legalidade",
+      "E": "Ato por meio do qual a Administração corrige um vício existente em ato ilegal, sanável"
+    },
+    "resposta_correta": "E",
+    "explicacao_professor": "Convalidação é o ato corretivo de um vício sanável em ato administrativo, sem prejudicar o interesse público."
+  },
+  {
+    "numero": 47,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "No processo administrativo, os princípios e garantias fundamentais assegurados aos administrados incluem:",
+    "opcoes": {
+      "A": "Contraditório, ampla defesa, devido processo legal, razoabilidade, proporcionalidade e motivação",
+      "B": "Instauração mediante provocação, instrução contraditória, decisão fundamentada",
+      "C": "Igualdade entre as partes, oportunidade de manifestação, avaliação das provas",
+      "D": "Direito de petição, contraditório processual, defesa técnica especializada",
+      "E": "Participação dos interessados, apresentação de alegações, produção de provas"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "Lei 9.784/99 estabelece contraditório, ampla defesa, devido processo legal, razoabilidade, proporcionalidade e motivação."
+  },
+  {
+    "numero": 48,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "A responsabilidade civil do Estado pode ser objetiva ou subjetiva. Assinale a opção correta no que concerne a essa responsabilidade.",
+    "opcoes": {
+      "A": "A responsabilidade por atos comissivos depende da demonstração de dolo ou culpa",
+      "B": "Na hipótese de omissão, aplica-se a teoria subjetiva, exigindo demonstração de culpa",
+      "C": "A responsabilidade objetiva configura-se apenas diante de atos ilícitos",
+      "D": "A culpa exclusiva da vítima exclui a responsabilidade civil do Estado",
+      "E": "O Estado não pode ser responsabilizado por concessionárias de serviços públicos"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "A culpa exclusiva da vítima rompe o nexo causal entre a atuação estatal e o dano, excluindo a responsabilidade."
+  },
+  {
+    "numero": 49,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Em 2024, André cometeu crime cuja pena máxima era de quatro anos. Em 2025, nova lei aumentou a pena para oito anos. André ainda não havia sido julgado. Nessa situação, assinale a alternativa correta.",
+    "opcoes": {
+      "A": "A nova lei será aplicada a André somente se ainda não houver sentença",
+      "B": "A lei nova é mais gravosa, mas retroage por se tratar de crime doloso",
+      "C": "A nova lei aplica-se imediatamente a todos os casos",
+      "D": "A nova lei penal não retroage, por ser mais severa",
+      "E": "A lei penal mais gravosa não retroage, devendo aplicar-se a norma da época dos fatos"
+    },
+    "resposta_correta": "E",
+    "explicacao_professor": "Lei penal mais gravosa não retroage conforme artigo 5º, XXXIX da CF. Aplica-se a lei vigente à época dos fatos."
+  },
+  {
+    "numero": 50,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "De acordo com o Código Penal brasileiro, a extraterritorialidade da lei penal aplica-se:",
+    "opcoes": {
+      "A": "Exclusivamente a crimes cometidos no Brasil por estrangeiros",
+      "B": "Apenas aos crimes que afetam bens jurídicos internacionais",
+      "C": "À prática de crimes contra a administração pública por funcionário público brasileiro, ainda que cometidos no exterior",
+      "D": "Apenas mediante solicitação expressa do governo estrangeiro",
+      "E": "Exclusivamente a crimes cometidos em alto-mar, em navios estrangeiros"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "O CP prevê que crimes contra a administração pública cometidos por servidor público brasileiro no exterior podem ser punidos."
+  },
+  {
+    "numero": 51,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Em relação ao concurso de pessoas, assinale a alternativa correta.",
+    "opcoes": {
+      "A": "A teoria só interessa aos delitos unissubjetivos",
+      "B": "Resta configurado quando dois ou mais concorrem para um crime, sendo irrelevante a identidade de propósitos",
+      "C": "As circunstâncias objetivas se comunicam mesmo que o coautor não tenha conhecimento",
+      "D": "O Código Penal não distingue autoria de participação",
+      "E": "As circunstâncias pessoais sempre se comunicam entre os agentes"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "A teoria do concurso de pessoas interessa aos delitos unissubjetivos. Nos plurissubjetivos, a reunião de pessoas é da essência."
+  },
+  {
+    "numero": 52,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Conforme o art. 312 do Código Penal, o crime de peculato ocorre quando o agente público:",
+    "opcoes": {
+      "A": "Se apropria de qualquer bem público ou privado",
+      "B": "Se apropria de valor ou bem móvel público, de que tem posse em razão do cargo",
+      "C": "Subtrai bem móvel alheio com uso de arma",
+      "D": "Solicita vantagem indevida, prometendo influenciar ato administrativo",
+      "E": "Desvia recurso orçamentário sem dolo"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "Peculato é apropriação de valor ou bem móvel público ou particular de que o agente tem posse em razão do cargo."
+  },
+  {
+    "numero": 53,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Conforme o Código de Processo Penal, estando o indiciado preso, o prazo para encerramento do inquérito policial é de:",
+    "opcoes": {
+      "A": "5 dias",
+      "B": "10 dias",
+      "C": "15 dias",
+      "D": "30 dias",
+      "E": "60 dias"
+    },
+    "resposta_correta": "B",
+    "explicacao_professor": "CPP artigo 10 estabelece prazo máximo de 10 dias para inquérito quando o indiciado está preso."
+  },
+  {
+    "numero": 54,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "No tocante às espécies de prisão, assinale a alternativa correta:",
+    "opcoes": {
+      "A": "A prisão temporária pode ser decretada por autoridade policial",
+      "B": "A prisão em flagrante sempre exige prévia autorização judicial",
+      "C": "A prisão preventiva pode ser decretada de ofício pelo juiz, mesmo após Lei 13.964/2019",
+      "D": "O juiz pode substituir prisão preventiva pela domiciliar quando o agente for imprescindível aos cuidados de pessoa menor de 6 anos",
+      "E": "A prisão civil por dívida é cabível no caso de obrigação alimentar"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "Lei 13.964/2019 permite substituição de prisão preventiva por domiciliar para responsável por pessoa menor de 6 anos ou com deficiência."
+  },
+  {
+    "numero": 55,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Sobre a ação penal, assinale a alternativa correta:",
+    "opcoes": {
+      "A": "A ação penal pública é indisponível, não podendo ser arquivada sem controle judicial",
+      "B": "A queixa-crime é apresentada pelo Ministério Público",
+      "C": "A análise do pedido de trancamento é prejudicada pela aceitação de suspensão condicional",
+      "D": "O Ministério Público pode oferecer denúncia sem justa causa",
+      "E": "A ação penal privada pode ser ajuizada independentemente de manifestação da vítima"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "Ação penal pública é indisponível, exigindo controle judicial para seu arquivamento pelo MP."
+  },
+  {
+    "numero": 56,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Fábio, reincidente em crime doloso, cumpre pena definitiva em regime fechado por roubo. Sobrevém o falecimento de seu cônjuge. Nesse cenário, é correto afirmar que Fábio",
+    "opcoes": {
+      "A": "tem direito à permissão de saída, concedida pelo diretor",
+      "B": "tem direito à saída temporária, concedida pelo diretor",
+      "C": "tem direito à saída temporária, mediante escolta",
+      "D": "não tem direito à permissão de saída, por estar em regime fechado",
+      "E": "não tem direito à permissão de saída, por ser reincidente"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "LEP artigo 120 prevê saída temporária (permissão de saída) em casos de morte de cônjuge, concedida pelo diretor do estabelecimento."
+  },
+  {
+    "numero": 57,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "De acordo com a Lei nº 11.343/2006, qual das alternativas descreve corretamente uma circunstância que pode aumentar a pena para o traficante?",
+    "opcoes": {
+      "A": "O tráfico é punido com pena fixa de 10 anos, sem possibilidade de aumento",
+      "B": "A pena pode ser aumentada se o tráfico ocorrer em locais de culto religioso",
+      "C": "A pena pode ser aumentada se o tráfico ocorrer em escolas ou envolver menores de idade",
+      "D": "A pena pode ser aumentada caso o traficante seja usuário de drogas",
+      "E": "A pena pode ser aumentada apenas se o traficante for funcionário público"
+    },
+    "resposta_correta": "C",
+    "explicacao_professor": "Lei 11.343/06 prevê aumento de pena quando tráfico ocorre em escolas ou envolve menores de idade."
+  },
+  {
+    "numero": 58,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "A Lei nº 13.869/2019 dispõe sobre crimes de abuso de autoridade. Com base nessa legislação, assinale a alternativa CORRETA.",
+    "opcoes": {
+      "A": "Não existe possibilidade de substituição de pena privativa de liberdade por pena restritiva",
+      "B": "Os crimes são sempre de ação penal pública condicionada à representação",
+      "C": "A responsabilidade civil e administrativa deve se basear na apuração criminal",
+      "D": "É efeito da condenação a inabilitação pelo prazo de 1 a 5 anos",
+      "E": "Divergências na interpretação da lei configuram crime de abuso"
+    },
+    "resposta_correta": "D",
+    "explicacao_professor": "Lei 13.869/2019 prevê como efeito da condenação a inabilitação para cargo público pelo prazo de 1 a 5 anos."
+  },
+  {
+    "numero": 59,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "Considerando as disposições do Regime Jurídico Único dos servidores públicos civis do Espírito Santo, é correto afirmar que poderá o servidor público ausentar-se do serviço:",
+    "opcoes": {
+      "A": "pelos dias necessários à realização de provas ou exames finais quando estudante",
+      "B": "por oito dias consecutivos por motivo de falecimento do cônjuge ou pais",
+      "C": "por até dois dias para apresentação obrigatória em órgão militar",
+      "D": "por até cinco dias consecutivos por motivo de casamento",
+      "E": "por um dia a cada seis meses para doação de sangue"
+    },
+    "resposta_correta": "A",
+    "explicacao_professor": "Lei estadual permite ausência para realização de provas/exames finais para estudante matriculado em estabelecimento oficial."
+  },
+  {
+    "numero": 60,
+    "disciplina": "POLICIA PENAL02",
+    "questao": "De acordo com a Lei Estadual nº 1.059/2023, o lapso de tempo estabelecido como o mínimo necessário para que o servidor se habilite à progressão ou promoção é denominado(a):",
+    "opcoes": {
+      "A": "carreira",
+      "B": "classe",
+      "C": "referência",
+      "D": "progresso",
+      "E": "interstício"
+    },
+    "resposta_correta": "E",
+    "explicacao_professor": "Interstício é o lapso de tempo mínimo exigido para progressão ou promoção do servidor conforme Lei 1.059/2023."
+  }
+];
         let questoesAtual = [];
         let modoProfessor = false;
         let modoDeus = false;
@@ -1094,7 +2691,355 @@ D) Opção D"></textarea>
         let tipoInicioSimulado = null;
         let parametroSimulado = null;
 
-        function inicializar() {
+        
+
+        // ===== NOVO: VERIFICAR HTML COM SIMULADOS - CORRIGIDO PARA ABRIR NA PÁGINA PRINCIPAL =====
+        function verificarHTMLCompleto() {
+            try {
+                // PASSO 1: Pegar o HTML original da página
+                let htmlAtual = document.documentElement.outerHTML;
+
+                // PASSO 2: Extrair apenas os simulados ATIVOS (não excluídos)
+                const simuladosAtivos = JSON.stringify(todasAsQuestoes, null, 2);
+
+                // PASSO 3: MODIFICAR o HTML para incluir os simulados no array
+                const padrao = /let todasAsQuestoes = \[\];/g;
+                const novaDeclaracao = `let todasAsQuestoes = ${simuladosAtivos};`;
+
+                let htmlModificado = htmlAtual.replace(padrao, novaDeclaracao);
+
+                // Se não encontrar, tentar alternativa
+                if (htmlModificado === htmlAtual) {
+                    const indiceTodasAsQuestoes = htmlAtual.indexOf('let todasAsQuestoes');
+                    if (indiceTodasAsQuestoes !== -1) {
+                        const fimDeclaracao = htmlAtual.indexOf(';', indiceTodasAsQuestoes);
+                        if (fimDeclaracao !== -1) {
+                            const antes = htmlAtual.substring(0, indiceTodasAsQuestoes);
+                            const depois = htmlAtual.substring(fimDeclaracao + 1);
+                            htmlModificado = antes + novaDeclaracao + depois;
+                        }
+                    }
+                }
+
+                // PASSO 4: REMOVER ADMIN PANEL DO HTML GERADO
+                // Procurar pela div do adminPanel e deixá-la vazia/oculta
+                const padraoadminPanel = /id="adminPanel"[^>]*>([\s\S]*?)<\/div>/;
+                htmlModificado = htmlModificado.replace(
+                    padraoadminPanel,
+                    'id="adminPanel" style="display: none;"><!-- Admin oculto na cópia --></div>'
+                );
+
+                // PASSO 5: OCULTAR BOTÃO DE ADMIN
+                // Procurar por botão "Acessar Modo Deus" e deixá-lo oculto
+                const padraoBotaoAdmin = /onclick="abrirModalSenha[^"]*"[^>]*>.*?<\/button>/;
+                htmlModificado = htmlModificado.replace(padraoBotaoAdmin, 'style="display: none;">');
+
+                // PASSO 6: GARANTIR QUE MODO NORMAL INICIA
+                // Modificar variáveis de inicialização para começar em modo estudo
+                htmlModificado = htmlModificado.replace(
+                    /let modoDeus = false;/g,
+                    'let modoDeus = false;'
+                );
+                htmlModificado = htmlModificado.replace(
+                    /let modoAdmin = false;/g,
+                    'let modoAdmin = false;'
+                );
+
+                // PASSO 7: MOSTRAR PÁGINA PRINCIPAL (não admin)
+                // Procurar por elementos que controlam visibilidade
+                htmlModificado = htmlModificado.replace(
+                    /id="mainContent"[^>]*style="[^"]*display: none;/g,
+                    'id="mainContent" style="display: block;'
+                );
+
+                // PASSO 8: Criar modal para exibição
+                const container = document.createElement('div');
+                container.id = 'modalHTMLCompleto';
+                container.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.85);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 99999;
+                    padding: 20px;
+                    box-sizing: border-box;
+                    overflow: auto;
+                `;
+
+                // Content do modal
+                const content = document.createElement('div');
+                content.style.cssText = `
+                    background: white;
+                    border-radius: 15px;
+                    width: 95%;
+                    max-width: 1400px;
+                    max-height: 90vh;
+                    display: flex;
+                    flex-direction: column;
+                    box-shadow: 0 25px 100px rgba(0, 0, 0, 0.6);
+                    overflow: hidden;
+                    border: 3px solid #667eea;
+                `;
+
+                // HEADER
+                const header = document.createElement('div');
+                header.style.cssText = `
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    padding: 25px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                `;
+
+                const titleDiv = document.createElement('div');
+                titleDiv.innerHTML = `
+                    <h2 style="margin: 0; font-size: 22px; font-weight: bold;">
+                        ✅ HTML ÚNICO COM TODOS OS SIMULADOS INSERIDOS
+                    </h2>
+                    <small style="opacity: 0.95; font-size: 13px;">
+                        Página PRINCIPAL (não admin) com simulados embutidos
+                    </small>
+                `;
+
+                const infoDiv = document.createElement('div');
+                infoDiv.style.cssText = `
+                    background: rgba(255,255,255,0.25);
+                    padding: 12px 18px;
+                    border-radius: 8px;
+                    font-size: 13px;
+                    white-space: nowrap;
+                    font-weight: bold;
+                `;
+                infoDiv.innerHTML = `
+                    📊 Questões: <strong>${todasAsQuestoes.length}</strong><br>
+                    📦 Tamanho: <strong>${(htmlModificado.length / 1024).toFixed(2)} KB</strong><br>
+                    ✅ Abre na página principal (sem admin)
+                `;
+
+                header.appendChild(titleDiv);
+                header.appendChild(infoDiv);
+
+                // BODY com textarea
+                const bodyDiv = document.createElement('div');
+                bodyDiv.style.cssText = `
+                    flex: 1;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    background: #f5f5f5;
+                    padding: 20px;
+                `;
+
+                const labelDiv = document.createElement('div');
+                labelDiv.style.cssText = `
+                    font-size: 12px;
+                    color: #666;
+                    margin-bottom: 8px;
+                    font-weight: bold;
+                `;
+                labelDiv.innerHTML = `
+                    📄 HTML PÁGINA PRINCIPAL (${todasAsQuestoes.length} questões inseridas):
+                `;
+                bodyDiv.appendChild(labelDiv);
+
+                const textarea = document.createElement('textarea');
+                textarea.value = htmlModificado;
+                textarea.style.cssText = `
+                    flex: 1;
+                    font-family: 'Courier New', 'Consolas', monospace;
+                    font-size: 11px;
+                    padding: 15px;
+                    border: 2px solid #ddd;
+                    border-radius: 10px;
+                    resize: none;
+                    background: #ffffff;
+                    color: #333;
+                    line-height: 1.4;
+                    overflow-y: auto;
+                    overflow-x: auto;
+                    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+                `;
+                bodyDiv.appendChild(textarea);
+
+                // FOOTER com botões
+                const footer = document.createElement('div');
+                footer.style.cssText = `
+                    padding: 20px;
+                    background: #f0f0f0;
+                    display: flex;
+                    gap: 12px;
+                    flex-wrap: wrap;
+                    border-top: 2px solid #ddd;
+                    justify-content: center;
+                `;
+
+                // Botão: Copiar Clipboard
+                const btnCopiar = document.createElement('button');
+                btnCopiar.innerHTML = '📋 Copiar para Clipboard';
+                btnCopiar.style.cssText = `
+                    padding: 14px 28px;
+                    background: #667eea;
+                    color: white;
+                    border: none;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    font-size: 14px;
+                    transition: all 0.3s ease;
+                    min-width: 180px;
+                    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+                `;
+                btnCopiar.onmouseover = function() { 
+                    this.style.background = '#5568d3';
+                    this.style.boxShadow = '0 6px 16px rgba(102, 126, 234, 0.5)';
+                };
+                btnCopiar.onmouseout = function() { 
+                    this.style.background = '#667eea';
+                    this.style.boxShadow = '0 4px 12px rgba(102, 126, 234, 0.3)';
+                };
+                btnCopiar.onclick = function() {
+                    textarea.select();
+                    document.execCommand('copy');
+
+                    const textOrig = btnCopiar.innerHTML;
+                    btnCopiar.innerHTML = '✅ Copiado com Sucesso!';
+                    btnCopiar.style.background = '#10b981';
+                    btnCopiar.style.boxShadow = '0 6px 16px rgba(16, 185, 129, 0.5)';
+
+                    setTimeout(() => {
+                        btnCopiar.innerHTML = textOrig;
+                        btnCopiar.style.background = '#667eea';
+                        btnCopiar.style.boxShadow = '0 4px 12px rgba(102, 126, 234, 0.3)';
+                    }, 2500);
+                };
+
+                // Botão: Download
+                const btnDownload = document.createElement('button');
+                btnDownload.innerHTML = '⬇️ Download HTML';
+                btnDownload.style.cssText = `
+                    padding: 14px 28px;
+                    background: #10b981;
+                    color: white;
+                    border: none;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    font-size: 14px;
+                    transition: all 0.3s ease;
+                    min-width: 180px;
+                    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+                `;
+                btnDownload.onmouseover = function() { 
+                    this.style.background = '#059669';
+                    this.style.boxShadow = '0 6px 16px rgba(16, 185, 129, 0.5)';
+                };
+                btnDownload.onmouseout = function() { 
+                    this.style.background = '#10b981';
+                    this.style.boxShadow = '0 4px 12px rgba(16, 185, 129, 0.3)';
+                };
+                btnDownload.onclick = function() {
+                    const blob = new Blob([htmlModificado], { type: 'text/html' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `Saber-Simulados-${new Date().toISOString().slice(0, 10)}.html`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                };
+
+                // Botão: Testar
+                const btnTestar = document.createElement('button');
+                btnTestar.innerHTML = '🧪 Abrir e Testar';
+                btnTestar.style.cssText = `
+                    padding: 14px 28px;
+                    background: #f59e0b;
+                    color: white;
+                    border: none;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    font-size: 14px;
+                    transition: all 0.3s ease;
+                    min-width: 180px;
+                    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+                `;
+                btnTestar.onmouseover = function() { 
+                    this.style.background = '#d97706';
+                    this.style.boxShadow = '0 6px 16px rgba(245, 158, 11, 0.5)';
+                };
+                btnTestar.onmouseout = function() { 
+                    this.style.background = '#f59e0b';
+                    this.style.boxShadow = '0 4px 12px rgba(245, 158, 11, 0.3)';
+                };
+                btnTestar.onclick = function() {
+                    const blob = new Blob([htmlModificado], { type: 'text/html' });
+                    const url = URL.createObjectURL(blob);
+                    window.open(url, '_blank');
+                };
+
+                // Botão: Fechar
+                const btnFechar = document.createElement('button');
+                btnFechar.innerHTML = '❌ Fechar';
+                btnFechar.style.cssText = `
+                    padding: 14px 28px;
+                    background: #ef4444;
+                    color: white;
+                    border: none;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    font-size: 14px;
+                    transition: all 0.3s ease;
+                    min-width: 180px;
+                    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+                `;
+                btnFechar.onmouseover = function() { 
+                    this.style.background = '#dc2626';
+                    this.style.boxShadow = '0 6px 16px rgba(239, 68, 68, 0.5)';
+                };
+                btnFechar.onmouseout = function() { 
+                    this.style.background = '#ef4444';
+                    this.style.boxShadow = '0 4px 12px rgba(239, 68, 68, 0.3)';
+                };
+                btnFechar.onclick = function() {
+                    document.body.removeChild(container);
+                };
+
+                footer.appendChild(btnCopiar);
+                footer.appendChild(btnDownload);
+                footer.appendChild(btnTestar);
+                footer.appendChild(btnFechar);
+
+                // Montar modal
+                content.appendChild(header);
+                content.appendChild(bodyDiv);
+                content.appendChild(footer);
+                container.appendChild(content);
+                document.body.appendChild(container);
+
+                console.log('✅ HTML PÁGINA PRINCIPAL GERADO COM SUCESSO!');
+                console.log(`📊 Questões: ${todasAsQuestoes.length}`);
+                console.log(`📦 Tamanho: ${(htmlModificado.length / 1024).toFixed(2)} KB`);
+                console.log('✅ Admin OCULTO - Abre na página principal!');
+
+            } catch (erro) {
+                console.error('❌ Erro:', erro);
+                alert('❌ Erro ao gerar HTML!');
+            }
+        }
+        // ===== FIM: VERIFICAR HTML COM SIMULADOS - CORRIGIDO =====
+
+function inicializar() {
             carregarDoLocalStorage();
             atualizarDisciplinas();
             atualizarSimuladosCriados();
@@ -1877,212 +3822,6 @@ D) Opção D"></textarea>
         }
 
         window.addEventListener('load', inicializar);
-    
+    </script>
 
-        // 🚀 DADOS INTEGRADOS - 186 QUESTÕES UNIFICADAS
-        // ========== SINCRONIZAÇÃO COM GITHUB ==========
-        const GITHUB_CONFIG_KEY = 'saberGitHubConfig';
-        const GITHUB_LAST_SYNC = 'saberGitHubLastSync';
-        const GITHUB_CACHE_KEY = 'saberGitHubCache';
-        let githubConfig = {};
-
-        // Carregar configuração GitHub do localStorage
-        function carregarConfigGitHub() {
-            const saved = localStorage.getItem(GITHUB_CONFIG_KEY);
-            if (saved) {
-                githubConfig = JSON.parse(saved);
-                atualizarStatusGitHub();
-            }
-        }
-
-        // Salvar configuração GitHub
-        function salvarConfigGitHub() {
-            const username = document.getElementById('githubUsername')?.value?.trim();
-            const repo = document.getElementById('githubRepo')?.value?.trim();
-            const token = document.getElementById('githubToken')?.value?.trim();
-            const folder = document.getElementById('githubFolder')?.value?.trim() || '';
-
-            if (!username || !repo) {
-                mostrarStatus('Preencha usuário e repositório!', 'error', 'statusGitHub');
-                return false;
-            }
-
-            githubConfig = { username, repo, token: token || null, folder };
-            localStorage.setItem(GITHUB_CONFIG_KEY, JSON.stringify(githubConfig));
-            mostrarStatus('✅ Configuração salva! Agora clique em Sincronizar.', 'success', 'statusGitHub');
-            atualizarStatusGitHub();
-            return true;
-        }
-
-        // Atualizar status da configuração
-        function atualizarStatusGitHub() {
-            const statusEl = document.getElementById('statusConfigGitHub');
-            if (!statusEl) return;
-
-            if (githubConfig.username) {
-                const lastSync = localStorage.getItem(GITHUB_LAST_SYNC);
-                const dataSync = lastSync ? new Date(lastSync).toLocaleString('pt-BR') : 'Nunca';
-                statusEl.innerHTML = `<strong>Conectado:</strong> ${githubConfig.username}/${githubConfig.repo} | Último sincronismo: ${dataSync}`;
-            } else {
-                statusEl.innerHTML = '<em>Nenhum repositório configurado</em>';
-            }
-        }
-
-        // Sincronizar simulados do GitHub
-        async function sincronizarGitHub() {
-            const botao = event?.target;
-            if (botao) botao.disabled = true;
-
-            if (!githubConfig.username || !githubConfig.repo) {
-                mostrarStatus('Configure o repositório primeiro!', 'error', 'statusGitHub');
-                if (botao) botao.disabled = false;
-                return;
-            }
-
-            mostrarStatus('🔄 Sincronizando com GitHub...', 'info', 'statusGitHub');
-
-            try {
-                const apiUrl = `https://api.github.com/repos/${githubConfig.username}/${githubConfig.repo}/contents/${githubConfig.folder}`;
-                const headers = {};
-
-                if (githubConfig.token) {
-                    headers['Authorization'] = `token ${githubConfig.token}`;
-                }
-
-                const response = await fetch(apiUrl, { headers });
-
-                if (!response.ok) {
-                    if (response.status === 404) {
-                        throw new Error('Repositório ou pasta não encontrada');
-                    } else if (response.status === 401) {
-                        throw new Error('Token inválido ou expirado');
-                    } else if (response.status === 403) {
-                        throw new Error('Acesso negado (limite de requisições?)');
-                    }
-                    throw new Error(`Erro ${response.status}: ${response.statusText}`);
-                }
-
-                const contents = await response.json();
-
-                if (!Array.isArray(contents)) {
-                    throw new Error('Resposta inválida do GitHub');
-                }
-
-                // Filtrar apenas arquivos .json
-                const jsonFiles = contents.filter(item => 
-                    item.type === 'file' && item.name.endsWith('.json')
-                );
-
-                if (jsonFiles.length === 0) {
-                    throw new Error('Nenhum arquivo .json encontrado no repositório');
-                }
-
-                // Carregar cada JSON
-                const questoesCarregadas = [];
-                const erros = [];
-
-                for (const file of jsonFiles) {
-                    try {
-                        const jsonResponse = await fetch(file.download_url || `https://raw.githubusercontent.com/${githubConfig.username}/${githubConfig.repo}/main/${githubConfig.folder}${githubConfig.folder ? '/' : ''}${file.name}`);
-
-                        if (!jsonResponse.ok) {
-                            erros.push(`${file.name}: falha ao baixar`);
-                            continue;
-                        }
-
-                        const questoes = await jsonResponse.json();
-
-                        if (Array.isArray(questoes)) {
-                            questoesCarregadas.push(...questoes);
-                        } else if (questoes.questoes && Array.isArray(questoes.questoes)) {
-                            questoesCarregadas.push(...questoes.questoes);
-                        }
-                    } catch (e) {
-                        erros.push(`${file.name}: ${e.message}`);
-                    }
-                }
-
-                if (questoesCarregadas.length === 0) {
-                    throw new Error('Nenhuma questão válida foi carregada');
-                }
-
-                // Salvar questões
-                localStorage.setItem('projetoSaberQuestoes', JSON.stringify(questoesCarregadas));
-                localStorage.setItem(GITHUB_LAST_SYNC, new Date().toISOString());
-                localStorage.setItem(GITHUB_CACHE_KEY, JSON.stringify(questoesCarregadas));
-
-                let mensagem = `✅ ${questoesCarregadas.length} questões carregadas de ${jsonFiles.length} arquivo(s)`;
-                if (erros.length > 0) {
-                    mensagem += `\n⚠️ Erros: ${erros.join('; ')}`;
-                }
-
-                mostrarStatus(mensagem, 'success', 'statusGitHub');
-                atualizarStatusGitHub();
-                carregarQuestoesIntegradas();
-
-                // Atualizar contador
-                const totalQuestoes = questoesCarregadas.length;
-                const profileCard = document.querySelector('.profile-card');
-                if (profileCard) {
-                    const totalEl = profileCard.querySelector('p:nth-child(2)');
-                    if (totalEl) totalEl.textContent = `Total de questões disponíveis: ${totalQuestoes}`;
-                }
-
-            } catch (error) {
-                mostrarStatus(`❌ Erro: ${error.message}`, 'error', 'statusGitHub');
-                console.error('Erro ao sincronizar GitHub:', error);
-            }
-
-            if (botao) botao.disabled = false;
-        }
-
-        // Testar conexão com GitHub
-        async function testarConexaoGitHub() {
-            if (!githubConfig.username || !githubConfig.repo) {
-                mostrarStatus('Configure o repositório primeiro!', 'error', 'statusGitHub');
-                return;
-            }
-
-            mostrarStatus('🔗 Testando conexão...', 'info', 'statusGitHub');
-
-            try {
-                const apiUrl = `https://api.github.com/repos/${githubConfig.username}/${githubConfig.repo}`;
-                const headers = {};
-
-                if (githubConfig.token) {
-                    headers['Authorization'] = `token ${githubConfig.token}`;
-                }
-
-                const response = await fetch(apiUrl, { headers });
-
-                if (response.ok) {
-                    const data = await response.json();
-                    mostrarStatus(`✅ Repositório encontrado! (${data.pushed_at ? 'Última atualização: ' + new Date(data.pushed_at).toLocaleDateString('pt-BR') : ''})`, 'success', 'statusGitHub');
-                } else if (response.status === 404) {
-                    mostrarStatus('❌ Repositório não encontrado', 'error', 'statusGitHub');
-                } else if (response.status === 401) {
-                    mostrarStatus('❌ Token inválido', 'error', 'statusGitHub');
-                } else {
-                    mostrarStatus(`❌ Erro ${response.status}: ${response.statusText}`, 'error', 'statusGitHub');
-                }
-            } catch (error) {
-                mostrarStatus(`❌ Erro de conexão: ${error.message}`, 'error', 'statusGitHub');
-            }
-        }
-
-        // Limpar cache do GitHub
-        function limparCacheGitHub() {
-            if (confirm('Deseja limpar o cache e remover as configurações do GitHub?')) {
-                localStorage.removeItem(GITHUB_CONFIG_KEY);
-                localStorage.removeItem(GITHUB_LAST_SYNC);
-                localStorage.removeItem(GITHUB_CACHE_KEY);
-                githubConfig = {};
-                atualizarStatusGitHub();
-                mostrarStatus('✅ Cache limpo!', 'success', 'statusGitHub');
-            }
-        }
-
-        // ========== FIM SINCRONIZAÇÃO GITHUB ==========
-        
-        const QUESTOES_INTEGRADAS = [];
->
+</body></html>
